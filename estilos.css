@@ -944,10 +944,8 @@ footer {
 .footer-grid > div:first-child img {
     width: 118px;
     height: 82px;
-    padding: 7px;
     object-fit: contain;
-    border-radius: 15px;
-    background: #FFFFFF;
+    background: transparent;
 }
 
 .footer-grid p {
