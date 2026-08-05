@@ -161,7 +161,7 @@ a {
 
 .hero {
     min-height: 820px;
-    padding: 170px 0 110px;
+    padding: 90px 0 110px;
     position: relative;
     overflow: hidden;
     background:
@@ -545,11 +545,9 @@ a {
 }
 
 .split > div:first-child {
-    position: sticky;
-    top: 140px;
+    position: static;
     align-self: start;
 }
-
 .split p,
 .features p {
     color: #C9C4DA;
@@ -619,8 +617,7 @@ a {
 }
 
 .about-intro {
-    position: sticky;
-    top: 130px;
+    position: static;
 }
 
 .about-intro h2 {
@@ -1215,22 +1212,4 @@ footer {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-}
-
-.platform-list strong {
-    width: 28px;
-    height: 28px;
-    display: inline-grid;
-    place-items: center;
-    flex: 0 0 auto;
-    border-radius: 8px;
-    color: #FFFFFF;
-    background: linear-gradient(
-        135deg,
-        var(--p),
-        var(--c)
-    );
-    font-size: 0.68rem;
-    font-weight: 800;
-    letter-spacing: 0;
 }
