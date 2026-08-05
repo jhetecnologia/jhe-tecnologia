@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css?v=5">
+  <link rel="stylesheet" href="estilos.css?v=6">
 
   <script type="application/ld+json">
   {
@@ -93,6 +93,113 @@
 ]
   }
   </script>
+
+  <style>
+    .platform-list {
+      align-items: stretch;
+    }
+
+    .platform-item {
+      min-width: 150px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid rgba(91, 51, 245, 0.12);
+      border-radius: 14px;
+      background: #ffffff;
+    }
+
+    .platform-item img {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 auto;
+      object-fit: contain;
+    }
+
+    .platform-item span {
+      color: #4f4960;
+      font-size: 0.66rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      line-height: 1.25;
+    }
+
+    .testimonials-section {
+      background: #faf9ff;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial-card {
+      min-height: 230px;
+      padding: 30px;
+      border: 1px solid rgba(91, 51, 245, 0.14);
+      border-radius: 26px;
+      background: #ffffff;
+      box-shadow: 0 14px 42px rgba(67, 38, 201, 0.07);
+    }
+
+    .testimonial-card blockquote {
+      color: #6f6a7f;
+      font-size: 0.95rem;
+      line-height: 1.75;
+    }
+
+    .testimonial-card footer {
+      margin-top: 24px;
+      padding: 0;
+      color: #151225;
+      background: transparent;
+    }
+
+    .testimonial-card strong,
+    .testimonial-card small {
+      display: block;
+    }
+
+    .testimonial-card small {
+      margin-top: 4px;
+      color: #8f899f;
+    }
+
+    .testimonial-placeholder {
+      border-style: dashed;
+    }
+
+    .footer-grid a {
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 1050px) {
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 820px) {
+      .platform-list {
+        justify-content: center;
+      }
+
+      .platform-item {
+        width: calc(50% - 10px);
+      }
+    }
+
+    @media (max-width: 580px) {
+      .platform-item {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+
 </head>
 
 <body>
@@ -165,38 +272,62 @@
       </div>
     </section>
 
-    <section class="strip" aria-label="Plataformas utilizadas pela Jhe Tecnologia">
+    <section class="strip platform-strip" aria-label="Plataformas utilizadas pela Jhe Tecnologia">
       <div class="container platform-list">
 
-        <span>
-          <strong>G</strong>
-          GOOGLE ADS
-        </span>
+        <div class="platform-item">
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googleads.svg"
+            alt="Google Ads"
+            loading="lazy"
+          >
+          <span>GOOGLE ADS</span>
+        </div>
 
-        <span>
-          <strong>GA</strong>
-          GOOGLE ANALYTICS 4
-        </span>
+        <div class="platform-item">
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googleanalytics.svg"
+            alt="Google Analytics 4"
+            loading="lazy"
+          >
+          <span>GOOGLE ANALYTICS 4</span>
+        </div>
 
-        <span>
-          <strong>M</strong>
-          META ADS
-        </span>
+        <div class="platform-item">
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/meta.svg"
+            alt="Meta"
+            loading="lazy"
+          >
+          <span>META ADS</span>
+        </div>
 
-        <span>
-          <strong>in</strong>
-          LINKEDIN
-        </span>
+        <div class="platform-item">
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/linkedin.svg"
+            alt="LinkedIn"
+            loading="lazy"
+          >
+          <span>LINKEDIN</span>
+        </div>
 
-        <span>
-          <strong>GP</strong>
-          GOOGLE PERFIL DA EMPRESA
-        </span>
+        <div class="platform-item">
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlebusinessprofile.svg"
+            alt="Google Perfil da Empresa"
+            loading="lazy"
+          >
+          <span>GOOGLE PERFIL DA EMPRESA</span>
+        </div>
 
-        <span>
-          <strong>GT</strong>
-          TAG MANAGER
-        </span>
+        <div class="platform-item">
+          <img
+            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googletagmanager.svg"
+            alt="Google Tag Manager"
+            loading="lazy"
+          >
+          <span>TAG MANAGER</span>
+        </div>
 
       </div>
     </section>
@@ -398,7 +529,57 @@
       </div>
     </section>
 
-    <section class="section faq">
+    
+    <section class="section testimonials-section" id="depoimentos">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="eyebrow">DEPOIMENTOS</span>
+          <h2>Experiências de quem trabalha com a Jhe Tecnologia.</h2>
+          <p>
+            Os depoimentos devem ser publicados somente com autorização
+            e usando as palavras reais de cada cliente.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+
+          <article class="testimonial-card testimonial-placeholder reveal">
+            <blockquote>
+              “Espaço reservado para um depoimento real e autorizado de cliente.”
+            </blockquote>
+            <footer>
+              <strong>Nome do cliente</strong>
+              <small>Empresa e segmento</small>
+            </footer>
+          </article>
+
+          <article class="testimonial-card testimonial-placeholder reveal">
+            <blockquote>
+              “Substitua este texto pelo feedback verdadeiro recebido após a entrega do projeto.”
+            </blockquote>
+            <footer>
+              <strong>Nome do cliente</strong>
+              <small>Empresa e segmento</small>
+            </footer>
+          </article>
+
+          <article class="testimonial-card testimonial-placeholder reveal">
+            <blockquote>
+              “Inclua aqui uma avaliação real sobre atendimento, estratégia ou resultados.”
+            </blockquote>
+            <footer>
+              <strong>Nome do cliente</strong>
+              <small>Empresa e segmento</small>
+            </footer>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+<section class="section faq">
       <div class="container faq-grid">
         <div class="reveal">
           <span class="eyebrow">PERGUNTAS FREQUENTES</span>
@@ -492,6 +673,6 @@
     </svg>
   </a>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>
