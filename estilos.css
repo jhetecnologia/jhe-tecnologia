@@ -1211,3 +1211,26 @@ footer {
         height: 28px;
     }
 }
+.platform-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.platform-list strong {
+    width: 28px;
+    height: 28px;
+    display: inline-grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    color: #FFFFFF;
+    background: linear-gradient(
+        135deg,
+        var(--p),
+        var(--c)
+    );
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0;
+}
