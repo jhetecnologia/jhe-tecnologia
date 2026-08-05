@@ -21,7 +21,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="estilos.css?v=6">
+  <link rel="stylesheet" href="estilos.css?v=7">
 
   <script type="application/ld+json">
   {
@@ -109,6 +109,13 @@
       border: 1px solid rgba(91, 51, 245, 0.12);
       border-radius: 14px;
       background: #ffffff;
+    }
+
+    .platform-icon {
+      width: 26px;
+      height: 26px;
+      flex: 0 0 auto;
+      display: block;
     }
 
     .platform-item img {
@@ -218,7 +225,6 @@
         <a href="#servicos">Serviços</a>
         <a href="#diferenciais">Diferenciais</a>
         <a href="#sobre">Sobre</a>
-        <a href="#projetos">Projeto</a>
         <a href="#planos">Planos</a>
         <a href="#contato">Contato</a>
       </nav>
@@ -312,11 +318,20 @@
         </div>
 
         <div class="platform-item">
-          <img
-            src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/googlebusinessprofile.svg"
-            alt="Google Perfil da Empresa"
-            loading="lazy"
+          <svg
+            class="platform-icon"
+            viewBox="0 0 48 48"
+            role="img"
+            aria-label="Google Perfil da Empresa"
           >
+            <path fill="#4285F4" d="M8 10h32l-3 10H11L8 10z"></path>
+            <path fill="#EA4335" d="M11 20h7v6a4 4 0 0 1-7 0v-6z"></path>
+            <path fill="#FBBC04" d="M18 20h7v6a4 4 0 0 1-7 0v-6z"></path>
+            <path fill="#34A853" d="M25 20h7v6a4 4 0 0 1-7 0v-6z"></path>
+            <path fill="#4285F4" d="M32 20h5v6a4 4 0 0 1-5 0v-6z"></path>
+            <path fill="#FFFFFF" d="M14 29h20v11H14z"></path>
+            <path fill="#4285F4" d="M17 31h14v7H17z"></path>
+          </svg>
           <span>GOOGLE PERFIL DA EMPRESA</span>
         </div>
 
@@ -428,37 +443,7 @@
       </div>
     </section>
 
-    <section class="section" id="projetos">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">PROJETO EM DESTAQUE</span>
-          <h2>Estratégia digital aplicada a um negócio real.</h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-intro reveal">
-            <span class="eyebrow">ABSOLUTA SEGURANÇA</span>
-            <h2>Presença digital e campanhas para geração de oportunidades.</h2>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="https://www.absolutasegurancaredes.com/" target="_blank" rel="noopener noreferrer">Conhecer o projeto</a>
-            </div>
-          </div>
-
-          <div class="about-content reveal">
-            <p>Projeto desenvolvido para uma empresa especializada em redes de proteção, com atendimento em São Paulo.</p>
-            <div class="about-highlights">
-              <div><span>✓</span>Site institucional.</div>
-              <div><span>✓</span>Google Ads e Meta Ads.</div>
-              <div><span>✓</span>Google Analytics 4 e conversões.</div>
-              <div><span>✓</span>Contatos direcionados para o WhatsApp.</div>
-              <div><span>✓</span>Otimização da presença local.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="processo">
+<section class="section" id="processo">
       <div class="container">
         <div class="section-heading reveal">
           <span class="eyebrow">COMO FUNCIONA</span>
@@ -528,7 +513,6 @@
         </div>
       </div>
     </section>
-
 
 <section class="section faq">
       <div class="container faq-grid">
@@ -624,6 +608,6 @@
     </svg>
   </a>
 
-  <script src="script.js?v=3"></script>
+  <script src="script.js?v=4"></script>
 </body>
 </html>
