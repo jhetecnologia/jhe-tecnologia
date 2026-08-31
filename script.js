@@ -73,3 +73,12 @@ document.querySelectorAll(".reveal").forEach(element => {
     observer.observe(element);
 
 });
+
+// Conversão Google Ads - clique no WhatsApp
+document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
+    link.addEventListener("click", () => {
+        gtag("event", "conversion", {
+            send_to: "AW-17945711429/nFK4CLqxq-scEMWml-1C"
+        });
+    });
+});
