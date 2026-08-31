@@ -69,16 +69,29 @@ const observer = new IntersectionObserver(
 );
 
 document.querySelectorAll(".reveal").forEach(element => {
-
     observer.observe(element);
-
 });
 
 // Conversão Google Ads - clique no WhatsApp
 document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-    link.addEventListener("click", () => {
+
+    link.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+        const url = this.href;
+
         gtag("event", "conversion", {
-            send_to: "AW-17945711429/nFK4CLqxq-scEMWml-1C"
+            send_to: "AW-17945711429/nFK4CLqxq-scEMWml-1C",
+            event_callback: function() {
+                window.open(url, "_blank");
+            }
         });
+
+        setTimeout(function() {
+            window.open(url, "_blank");
+        }, 1200);
+
     });
+
 });
