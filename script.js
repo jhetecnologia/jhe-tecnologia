@@ -28,9 +28,7 @@ if (menuToggle) {
 
 // Fecha o menu ao clicar em um link
 document.querySelectorAll(".nav a").forEach(link => {
-
     link.addEventListener("click", () => {
-
         if (nav) {
             nav.classList.remove("open");
         }
@@ -38,34 +36,22 @@ document.querySelectorAll(".nav a").forEach(link => {
         if (menuToggle) {
             menuToggle.setAttribute("aria-expanded", "false");
         }
-
     });
-
 });
 
 // Scroll Reveal
 const observer = new IntersectionObserver(
-
     entries => {
-
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
-
                 entry.target.classList.add("visible");
-
                 observer.unobserve(entry.target);
-
             }
-
         });
-
     },
-
     {
         threshold: 0.15
     }
-
 );
 
 document.querySelectorAll(".reveal").forEach(element => {
@@ -74,24 +60,24 @@ document.querySelectorAll(".reveal").forEach(element => {
 
 // Conversão Google Ads - clique no WhatsApp
 document.querySelectorAll('a[href*="wa.me"]').forEach(link => {
-
     link.addEventListener("click", function(event) {
-
         event.preventDefault();
 
         const url = this.href;
+        let opened = false;
+
+        const openWhatsApp = function() {
+            if (!opened) {
+                opened = true;
+                window.open(url, "_blank");
+            }
+        };
 
         gtag("event", "conversion", {
             send_to: "AW-17945711429/nFK4CLqxq-scEMWml-1C",
-            event_callback: function() {
-                window.open(url, "_blank");
-            }
+            event_callback: openWhatsApp
         });
 
-        setTimeout(function() {
-            window.open(url, "_blank");
-        }, 1200);
-
+        setTimeout(openWhatsApp, 1200);
     });
-
 });
