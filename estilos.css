@@ -1,3 +1,4 @@
+```css
 /* =========================================================
    JHE TECNOLOGIA
    ESTILOS.CSS
@@ -715,6 +716,7 @@ button {
   color: rgba(255, 255, 255, 0.82);
 
   font-size: 11px;
+
   font-weight: 700;
 }
 
@@ -812,6 +814,7 @@ button {
 @keyframes chartGrow {
   from {
     transform: scaleY(0);
+
     transform-origin: bottom;
   }
 
@@ -2450,7 +2453,10 @@ button {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+
     animation-iteration-count: 1 !important;
+
     transition-duration: 0.01ms !important;
   }
 }
+```
