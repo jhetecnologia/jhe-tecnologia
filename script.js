@@ -1,50 +1,102 @@
-```js
-// Números animados do dashboard
-const counters = document.querySelectorAll(".counter");
+document.addEventListener("DOMContentLoaded", () => {
 
-const counterObserver = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) return;
+  /* ================================
+     ELEMENTOS QUE PRECISAM APARECER
+  ================================= */
 
-            const counter = entry.target;
-            const finalValue = Number(counter.dataset.target);
-            const prefix = counter.dataset.prefix || "";
-            const suffix = counter.dataset.suffix || "";
+  const revealElements = document.querySelectorAll(".reveal");
 
-            if (isNaN(finalValue)) return;
+  revealElements.forEach((element) => {
+    element.classList.add("visible");
 
-            const duration = 1200;
-            const startTime = performance.now();
+    // Garante que o conteúdo fique visível
+    // mesmo que a animação antiga tenha deixado opacity: 0.
+    element.style.opacity = "1";
+    element.style.visibility = "visible";
+    element.style.transform = "none";
+  });
 
-            function animate(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
 
-                // Movimento mais suave no final
-                const easeOut = 1 - Math.pow(1 - progress, 3);
-                const currentValue = Math.floor(finalValue * easeOut);
+  /* ================================
+     NÚMEROS ANIMADOS DO DASHBOARD
+  ================================= */
 
-                counter.textContent = `${prefix}${currentValue}${suffix}`;
+  const counters = document.querySelectorAll(".counter");
 
-                if (progress < 1) {
-                    requestAnimationFrame(animate);
-                } else {
-                    counter.textContent = `${prefix}${finalValue}${suffix}`;
-                }
-            }
+  const animateCounter = (counter) => {
+    const target = Number(counter.dataset.target);
+    const prefix = counter.dataset.prefix || "";
+    const suffix = counter.dataset.suffix || "";
 
-            requestAnimationFrame(animate);
+    if (Number.isNaN(target)) return;
 
-            counterObserver.unobserve(counter);
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const updateCounter = (currentTime) => {
+      const progress = Math.min(
+        (currentTime - startTime) / duration,
+        1
+      );
+
+      // Suaviza a desaceleração no final
+      const easedProgress =
+        1 - Math.pow(1 - progress, 3);
+
+      const currentValue = Math.round(
+        target * easedProgress
+      );
+
+      counter.textContent =
+        `${prefix}${currentValue}${suffix}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter);
+      } else {
+        counter.textContent =
+          `${prefix}${target}${suffix}`;
+      }
+    };
+
+    requestAnimationFrame(updateCounter);
+  };
+
+
+  /* ================================
+     OBSERVA OS NÚMEROS
+  ================================= */
+
+  if ("IntersectionObserver" in window) {
+
+    const counterObserver = new IntersectionObserver(
+      (entries, observer) => {
+
+        entries.forEach((entry) => {
+
+          if (!entry.isIntersecting) return;
+
+          animateCounter(entry.target);
+
+          observer.unobserve(entry.target);
         });
-    },
-    {
-        threshold: 0.5
-    }
-);
 
-counters.forEach(counter => {
-    counterObserver.observe(counter);
+      },
+      {
+        threshold: 0.5
+      }
+    );
+
+    counters.forEach((counter) => {
+      counterObserver.observe(counter);
+    });
+
+  } else {
+
+    // Fallback para navegadores sem IntersectionObserver
+    counters.forEach((counter) => {
+      animateCounter(counter);
+    });
+
+  }
+
 });
-```
