@@ -1,5 +1,6 @@
+```js
 // Números animados do dashboard
-const counters = document.querySelectorAll(".metric strong");
+const counters = document.querySelectorAll(".counter");
 
 const counterObserver = new IntersectionObserver(
     entries => {
@@ -7,11 +8,12 @@ const counterObserver = new IntersectionObserver(
             if (!entry.isIntersecting) return;
 
             const counter = entry.target;
-            const finalValue = parseInt(counter.textContent.replace(/\D/g, ""), 10);
+            const finalValue = Number(counter.dataset.target);
+            const prefix = counter.dataset.prefix || "";
+            const suffix = counter.dataset.suffix || "";
 
             if (isNaN(finalValue)) return;
 
-            let start = 0;
             const duration = 1200;
             const startTime = performance.now();
 
@@ -21,15 +23,14 @@ const counterObserver = new IntersectionObserver(
 
                 // Movimento mais suave no final
                 const easeOut = 1 - Math.pow(1 - progress, 3);
+                const currentValue = Math.floor(finalValue * easeOut);
 
-                start = Math.floor(finalValue * easeOut);
-
-                counter.textContent = `+${start}%`;
+                counter.textContent = `${prefix}${currentValue}${suffix}`;
 
                 if (progress < 1) {
                     requestAnimationFrame(animate);
                 } else {
-                    counter.textContent = `+${finalValue}%`;
+                    counter.textContent = `${prefix}${finalValue}${suffix}`;
                 }
             }
 
@@ -46,3 +47,4 @@ const counterObserver = new IntersectionObserver(
 counters.forEach(counter => {
     counterObserver.observe(counter);
 });
+```
