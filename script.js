@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     element.classList.add("visible");
 
     // Garante que o conteúdo fique visível
-    // mesmo que a animação antiga tenha deixado opacity: 0.
+    // mesmo que alguma animação antiga tenha deixado opacity: 0.
     element.style.opacity = "1";
     element.style.visibility = "visible";
     element.style.transform = "none";
@@ -24,16 +24,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".counter");
 
   const animateCounter = (counter) => {
+
+    // Evita executar a animação mais de uma vez
+    if (counter.dataset.animated === "true") return;
+
     const target = Number(counter.dataset.target);
     const prefix = counter.dataset.prefix || "";
     const suffix = counter.dataset.suffix || "";
 
-    if (Number.isNaN(target)) return;
+    if (!Number.isFinite(target)) return;
+
+    counter.dataset.animated = "true";
 
     const duration = 1400;
     const startTime = performance.now();
 
     const updateCounter = (currentTime) => {
+
       const progress = Math.min(
         (currentTime - startTime) / duration,
         1
