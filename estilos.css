@@ -553,7 +553,6 @@ button {
   position: relative;
 
   width: 100%;
-
   max-width: 520px;
 
   padding: 25px;
@@ -784,33 +783,13 @@ button {
     chartGrow 1.2s ease both;
 }
 
-.chart i:nth-child(1) {
-  height: 30%;
-}
-
-.chart i:nth-child(2) {
-  height: 43%;
-}
-
-.chart i:nth-child(3) {
-  height: 37%;
-}
-
-.chart i:nth-child(4) {
-  height: 58%;
-}
-
-.chart i:nth-child(5) {
-  height: 53%;
-}
-
-.chart i:nth-child(6) {
-  height: 76%;
-}
-
-.chart i:nth-child(7) {
-  height: 94%;
-}
+.chart i:nth-child(1) { height: 30%; }
+.chart i:nth-child(2) { height: 43%; }
+.chart i:nth-child(3) { height: 37%; }
+.chart i:nth-child(4) { height: 58%; }
+.chart i:nth-child(5) { height: 53%; }
+.chart i:nth-child(6) { height: 76%; }
+.chart i:nth-child(7) { height: 94%; }
 
 @keyframes chartGrow {
   from {
@@ -1590,9 +1569,7 @@ button {
 
 .faq {
   width: 100%;
-
   max-width: 850px;
-
   margin: 0 auto;
 }
 
@@ -1614,7 +1591,6 @@ button {
   display: flex;
 
   align-items: center;
-
   justify-content: space-between;
 
   width: 100%;
@@ -1634,6 +1610,10 @@ button {
   cursor: pointer;
 
   list-style: none;
+
+  transform: none !important;
+
+  rotate: none !important;
 }
 
 .faq summary::-webkit-details-marker {
@@ -1644,6 +1624,7 @@ button {
   display: none;
 }
 
+/* PERGUNTA */
 .faq summary span:first-child {
   flex: 1 1 auto;
 
@@ -1651,14 +1632,20 @@ button {
 
   display: block;
 
+  color: var(--dark);
+
   line-height: 1.5;
+
+  transform: none !important;
+
+  rotate: none !important;
 }
 
+/* BOTÃO + */
 .faq summary span:last-child {
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   width: 28px;
@@ -1678,13 +1665,26 @@ button {
 
   line-height: 1;
 
+  transform: none !important;
+
+  rotate: none !important;
+
   transition: transform 0.2s ease;
 }
 
-.faq details[open] summary span:last-child {
-  transform: rotate(45deg);
+/* QUANDO ABERTO, A PERGUNTA CONTINUA NORMAL */
+.faq details[open] summary span:first-child {
+  transform: none !important;
+
+  rotate: none !important;
 }
 
+/* SOMENTE O + GIRA */
+.faq details[open] summary span:last-child {
+  transform: rotate(45deg) !important;
+}
+
+/* RESPOSTA */
 .faq details p {
   display: block;
 
@@ -1717,6 +1717,10 @@ button {
   overflow-wrap: break-word;
 
   box-sizing: border-box;
+
+  transform: none !important;
+
+  rotate: none !important;
 }
 
 
@@ -2437,10 +2441,34 @@ button {
     padding: 19px 0;
 
     line-height: 1.5;
+
+    transform: none !important;
+
+    rotate: none !important;
   }
 
   .faq summary span:first-child {
     line-height: 1.5;
+
+    transform: none !important;
+
+    rotate: none !important;
+  }
+
+  .faq summary span:last-child {
+    transform: none !important;
+
+    rotate: none !important;
+  }
+
+  .faq details[open] summary span:first-child {
+    transform: none !important;
+
+    rotate: none !important;
+  }
+
+  .faq details[open] summary span:last-child {
+    transform: rotate(45deg) !important;
   }
 
   .faq details p {
