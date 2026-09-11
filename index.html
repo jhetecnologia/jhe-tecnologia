@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -11,7 +12,17 @@
 
   <meta
     name="description"
-    content="Jhe Tecnologia — Marketing Digital para empresas com estratégia, performance e tecnologia."
+    content="Jhe Tecnologia | Agência de Marketing Digital com Tráfego Pago, Presença Digital Local, Criação de Sites e soluções digitais para empresas."
+  >
+
+  <meta
+    name="author"
+    content="Jhe Tecnologia"
+  >
+
+  <meta
+    name="robots"
+    content="index, follow"
   >
 
   <meta
@@ -19,7 +30,37 @@
     content="#5B33F5"
   >
 
+  <link
+    rel="canonical"
+    href="https://www.jhetecnologia.com.br/"
+  >
+
+  <meta
+    property="og:title"
+    content="Jhe Tecnologia | Marketing Digital e Performance"
+  >
+
+  <meta
+    property="og:description"
+    content="Marketing Digital, Tráfego Pago, Presença Digital Local e Criação de Sites para empresas."
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:url"
+    content="https://www.jhetecnologia.com.br/"
+  >
+
   <title>Jhe Tecnologia | Marketing Digital e Performance</title>
+
+
+  <!-- =====================================================
+       FONTES
+       ===================================================== -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -34,12 +75,21 @@
     rel="stylesheet"
   >
 
+
+  <!-- =====================================================
+       CSS
+       ===================================================== -->
+
   <link
     rel="stylesheet"
     href="estilos.css"
   >
 
-  <!-- Google tag (gtag.js) -->
+
+  <!-- =====================================================
+       GOOGLE ADS
+       ===================================================== -->
+
   <script
     async
     src="https://www.googletagmanager.com/gtag/js?id=AW-17945711429"
@@ -61,6 +111,7 @@
 
 
 <body>
+
 
   <!-- =====================================================
        HEADER
@@ -90,6 +141,7 @@
         type="button"
         aria-label="Abrir menu"
         aria-expanded="false"
+        aria-controls="menu-principal"
       >
 
         <span></span>
@@ -99,7 +151,10 @@
       </button>
 
 
-      <nav class="nav">
+      <nav
+        class="nav"
+        id="menu-principal"
+      >
 
         <a href="#inicio">
           Início
@@ -134,6 +189,7 @@
 
   <main>
 
+
     <!-- ===================================================
          HERO
          =================================================== -->
@@ -145,19 +201,22 @@
 
       <div class="container hero-grid">
 
+
         <div class="hero-content reveal">
 
           <span class="eyebrow">
-            Estratégia, dados e performance
+            Agência de Marketing Digital
           </span>
+
 
           <h1>
             Marketing Digital para atrair mais clientes para sua empresa.
           </h1>
 
+
           <p>
             Estratégias digitais para fortalecer a presença da sua empresa,
-            gerar oportunidades e transformar dados em decisões mais eficientes.
+            gerar oportunidades e apoiar decisões mais eficientes.
           </p>
 
 
@@ -172,6 +231,7 @@
               Solicitar orçamento
             </a>
 
+
             <a
               href="#servicos"
               class="btn btn-secondary"
@@ -184,32 +244,24 @@
 
           <div class="hero-trust">
 
-            <span>
-              Estratégia
-            </span>
-
-            <span>
-              Performance
-            </span>
-
-            <span>
-              Dados
-            </span>
-
-            <span>
-              Tecnologia
-            </span>
+            <span>Estratégia</span>
+            <span>Performance</span>
+            <span>Dados</span>
+            <span>Tecnologia</span>
 
           </div>
 
         </div>
 
 
-        <!-- DASHBOARD -->
+        <!-- =================================================
+             DASHBOARD
+             ================================================= -->
 
         <div class="hero-visual reveal">
 
           <div class="dashboard">
+
 
             <div class="dashboard-top">
 
@@ -231,6 +283,7 @@
 
 
             <div class="metrics">
+
 
               <div class="metric">
 
@@ -296,6 +349,7 @@
                 </small>
 
               </div>
+
 
             </div>
 
@@ -363,6 +417,7 @@
 
       <div class="container">
 
+
         <div class="section-heading center reveal">
 
           <span class="eyebrow">
@@ -378,6 +433,7 @@
 
         <div class="pain-grid">
 
+
           <article class="pain-card reveal">
 
             <span>
@@ -389,8 +445,8 @@
             </h3>
 
             <p>
-              Sem acompanhamento adequado, fica difícil saber quais
-              campanhas e ações estão contribuindo para o resultado.
+              Sem acompanhamento adequado, fica difícil identificar
+              quais campanhas e ações estão contribuindo para o resultado.
             </p>
 
           </article>
@@ -432,20 +488,22 @@
 
           </article>
 
+
         </div>
 
 
         <div class="pain-closing reveal">
 
           <strong>
-            A estratégia começa entendendo o negócio.
+            Cada ação precisa ter um propósito.
           </strong>
 
           <span>
-            A partir daí, cada ação passa a ter um objetivo claro.
+            O ponto de partida é entender o negócio e seus objetivos.
           </span>
 
         </div>
+
 
       </div>
 
@@ -463,6 +521,7 @@
 
       <div class="container">
 
+
         <div class="section-heading center reveal">
 
           <span class="eyebrow">
@@ -470,18 +529,21 @@
           </span>
 
           <h2>
-            Soluções digitais para diferentes objetivos.
+            Soluções para construir, divulgar e otimizar sua presença digital.
           </h2>
 
           <p>
             Escolha a frente que sua empresa precisa desenvolver
-            ou combine diferentes soluções de acordo com a estratégia.
+            ou combine diferentes soluções de acordo com o projeto.
           </p>
 
         </div>
 
 
         <div class="services-grid">
+
+
+          <!-- ESTRATÉGIA -->
 
           <article class="card service-card reveal">
 
@@ -510,6 +572,8 @@
           </article>
 
 
+          <!-- TRÁFEGO -->
+
           <article class="card service-card reveal">
 
             <div class="service-icon">
@@ -536,6 +600,8 @@
 
           </article>
 
+
+          <!-- PRESENÇA LOCAL -->
 
           <article class="card service-card reveal">
 
@@ -564,6 +630,8 @@
           </article>
 
 
+          <!-- SITES -->
+
           <article class="card service-card reveal">
 
             <div class="service-icon">
@@ -590,6 +658,7 @@
 
           </article>
 
+
         </div>
 
       </div>
@@ -608,6 +677,7 @@
 
       <div class="container">
 
+
         <div class="section-heading dark-heading reveal">
 
           <span class="eyebrow">
@@ -615,18 +685,19 @@
           </span>
 
           <h2>
-            Uma visão mais estratégica do digital.
+            Marketing conectado aos objetivos do negócio.
           </h2>
 
           <p>
-            O trabalho combina planejamento, mídia, análise e tecnologia
-            para que as ações digitais tenham mais direção.
+            Planejamento, mídia, análise e tecnologia trabalhando
+            em conjunto para dar mais direção às ações digitais.
           </p>
 
         </div>
 
 
         <div class="features">
+
 
           <article class="feature reveal">
 
@@ -635,7 +706,7 @@
             </span>
 
             <h3>
-              Estratégia personalizada
+              Planejamento personalizado
             </h3>
 
             <p>
@@ -653,7 +724,7 @@
             </span>
 
             <h3>
-              Performance e tráfego pago
+              Gestão de campanhas
             </h3>
 
             <p>
@@ -694,10 +765,11 @@
 
             <p>
               Site, anúncios, presença local e dados podem trabalhar
-              juntos dentro de uma estratégia digital.
+              juntos dentro de uma mesma estrutura digital.
             </p>
 
           </article>
+
 
         </div>
 
@@ -717,6 +789,7 @@
 
       <div class="container split">
 
+
         <div class="about-content reveal">
 
           <span class="eyebrow">
@@ -724,25 +797,29 @@
           </span>
 
           <h2>
-            Estratégia digital com visão de negócio.
+            Marketing pensado para o negócio.
           </h2>
 
-          <p>
-            A Jhe Tecnologia atua com Marketing Digital, Tráfego Pago,
-            Presença Digital Local e Criação de Sites para empresas
-            que querem estruturar melhor sua presença no digital.
-          </p>
 
           <p>
-            O trabalho parte dos objetivos do negócio e utiliza dados
-            para acompanhar o desempenho, identificar oportunidades
-            e orientar melhorias ao longo do processo.
+            A Jhe Tecnologia atua como parceira de Marketing Digital
+            para empresas que precisam organizar sua presença online,
+            atrair oportunidades e acompanhar o que realmente importa.
+          </p>
+
+
+          <p>
+            Cada projeto parte do cenário e dos objetivos da empresa,
+            combinando canais, conteúdo, mídia e tecnologia de acordo
+            com a necessidade. O acompanhamento dos indicadores ajuda
+            a identificar o que funciona e onde é preciso ajustar.
           </p>
 
         </div>
 
 
         <div class="about-highlights">
+
 
           <div class="highlight reveal">
 
@@ -795,6 +872,7 @@
 
           </div>
 
+
         </div>
 
       </div>
@@ -810,6 +888,7 @@
 
       <div class="container">
 
+
         <div class="section-heading reveal">
 
           <span class="eyebrow">
@@ -817,18 +896,19 @@
           </span>
 
           <h2>
-            Do diagnóstico à otimização.
+            Um processo claro para transformar planejamento em ação.
           </h2>
 
           <p>
-            O processo é dividido em etapas para entender o cenário,
-            executar as ações e acompanhar o que os dados mostram.
+            Cada etapa ajuda a entender o cenário, executar as ações
+            e acompanhar o que os indicadores mostram.
           </p>
 
         </div>
 
 
         <div class="process">
+
 
           <article class="process-item reveal">
 
@@ -859,7 +939,7 @@
             </h3>
 
             <p>
-              Definição dos canais, estratégias e ações mais adequadas
+              Definição dos canais, ações e abordagens mais adequadas
               para cada objetivo.
             </p>
 
@@ -896,10 +976,11 @@
 
             <p>
               Acompanhamento dos indicadores, testes e ajustes
-              para melhorar continuamente a estratégia.
+              para melhorar continuamente as ações.
             </p>
 
           </article>
+
 
         </div>
 
@@ -918,6 +999,7 @@
     >
 
       <div class="container">
+
 
         <div class="section-heading center reveal">
 
@@ -940,9 +1022,12 @@
         <div class="plans-grid">
 
 
-          <!-- ESTRATÉGIA DE MARKETING -->
+          <!-- =================================================
+               ESTRATÉGIA DE MARKETING
+               ================================================= -->
 
           <article class="plan reveal">
+
 
             <div class="plan-header">
 
@@ -950,15 +1035,17 @@
                 ESTRATÉGIA DE MARKETING
               </span>
 
+
               <h3>
                 R$799
                 <small>
-                  a partir/mês
+                  a partir de / mês
                 </small>
               </h3>
 
+
               <p>
-                Para empresas que querem estruturar sua comunicação
+                Para empresas que querem organizar sua comunicação
                 e fortalecer a presença digital.
               </p>
 
@@ -968,11 +1055,19 @@
             <ul>
 
               <li>
-                Gestão estratégica de redes sociais
+                Planejamento de Marketing Digital
+              </li>
+
+              <li>
+                Estratégia de comunicação digital
               </li>
 
               <li>
                 Planejamento de conteúdo
+              </li>
+
+              <li>
+                Gestão estratégica de redes sociais
               </li>
 
               <li>
@@ -981,10 +1076,6 @@
 
               <li>
                 Até 4 vídeos curtos enviados pelo cliente por mês
-              </li>
-
-              <li>
-                Estratégia de comunicação digital
               </li>
 
               <li>
@@ -1007,12 +1098,16 @@
               Solicitar orçamento
             </a>
 
+
           </article>
 
 
-          <!-- TRÁFEGO PAGO -->
+          <!-- =================================================
+               TRÁFEGO PAGO
+               ================================================= -->
 
           <article class="plan featured reveal">
+
 
             <span class="plan-badge">
               MAIS ESCOLHIDO
@@ -1025,12 +1120,14 @@
                 TRÁFEGO PAGO
               </span>
 
+
               <h3>
                 R$499
                 <small>
-                  a partir/mês
+                  a partir de / mês
                 </small>
               </h3>
+
 
               <p>
                 Para empresas que querem atrair potenciais clientes
@@ -1078,12 +1175,16 @@
               Solicitar orçamento
             </a>
 
+
           </article>
 
 
-          <!-- PRESENÇA DIGITAL LOCAL -->
+          <!-- =================================================
+               PRESENÇA DIGITAL LOCAL
+               ================================================= -->
 
           <article class="plan reveal">
+
 
             <div class="plan-header">
 
@@ -1091,12 +1192,14 @@
                 PRESENÇA DIGITAL LOCAL
               </span>
 
+
               <h3>
                 R$399
                 <small>
-                  a partir/mês
+                  a partir de / mês
                 </small>
               </h3>
+
 
               <p>
                 Para empresas que querem melhorar sua presença
@@ -1152,7 +1255,9 @@
               Solicitar orçamento
             </a>
 
+
           </article>
+
 
         </div>
 
@@ -1168,6 +1273,7 @@
     <section class="section faq-section">
 
       <div class="container">
+
 
         <div class="section-heading center reveal">
 
@@ -1199,6 +1305,7 @@
 
             </summary>
 
+
             <p>
               Não. O valor da gestão corresponde aos serviços contratados.
               O investimento em mídia é pago diretamente às plataformas
@@ -1222,10 +1329,11 @@
 
             </summary>
 
+
             <p>
               O valor depende do objetivo, segmento, região, concorrência
-              e estratégia. A recomendação é feita de acordo com o cenário
-              de cada empresa.
+              e planejamento. A recomendação é feita de acordo com o
+              cenário de cada empresa.
             </p>
 
           </details>
@@ -1245,10 +1353,11 @@
 
             </summary>
 
+
             <p>
               Não existe um prazo único. Os resultados dependem de fatores
               como oferta, orçamento, concorrência, segmento e qualidade
-              da estratégia. O acompanhamento permite realizar ajustes
+              das ações. O acompanhamento permite realizar ajustes
               conforme os dados.
             </p>
 
@@ -1269,8 +1378,9 @@
 
             </summary>
 
+
             <p>
-              Sim. As estratégias são adaptadas aos objetivos, público
+              Sim. As soluções são adaptadas aos objetivos, público
               e características de cada negócio.
             </p>
 
@@ -1291,10 +1401,11 @@
 
             </summary>
 
+
             <p>
               As ações são acompanhadas por meio de métricas e indicadores,
               permitindo identificar oportunidades, testar alternativas
-              e realizar ajustes estratégicos.
+              e realizar ajustes ao longo do trabalho.
             </p>
 
           </details>
@@ -1314,12 +1425,14 @@
 
             </summary>
 
+
             <p>
               Sim, quando previstos no escopo contratado. A quantidade
               de criativos varia de acordo com o serviço ou plano escolhido.
             </p>
 
           </details>
+
 
         </div>
 
@@ -1329,12 +1442,13 @@
 
 
     <!-- ===================================================
-         SEO
+         SEO / POSICIONAMENTO
          =================================================== -->
 
     <section class="seo-section">
 
       <div class="container">
+
 
         <div class="seo-box reveal">
 
@@ -1342,15 +1456,16 @@
             MARKETING DIGITAL PARA EMPRESAS
           </span>
 
+
           <h2>
-            Uma presença digital mais estratégica para o seu negócio.
+            Marketing Digital com estratégia e execução.
           </h2>
 
+
           <p>
-            A Jhe Tecnologia desenvolve soluções em Marketing Digital,
-            Tráfego Pago, Presença Digital Local e Criação de Sites,
-            ajudando empresas a estruturar sua presença online e
-            transformar oportunidades digitais em ações mais estratégicas.
+            A Jhe Tecnologia atua com Marketing Digital, Tráfego Pago,
+            Presença Digital Local e Criação de Sites, desenvolvendo
+            soluções de acordo com os objetivos e necessidades de cada empresa.
           </p>
 
         </div>
@@ -1371,15 +1486,18 @@
 
       <div class="container cta-content">
 
+
         <div class="reveal">
 
           <span class="eyebrow">
             VAMOS CONVERSAR?
           </span>
 
+
           <h2>
             Vamos entender o que sua empresa precisa.
           </h2>
+
 
           <p>
             Conte um pouco sobre o seu negócio e seus objetivos.
@@ -1399,9 +1517,11 @@
           Falar pelo WhatsApp
         </a>
 
+
       </div>
 
     </section>
+
 
   </main>
 
@@ -1414,12 +1534,14 @@
 
     <div class="container">
 
+
       <div class="footer-grid">
 
 
         <!-- MARCA -->
 
         <div class="footer-brand">
+
 
           <a
             href="#inicio"
@@ -1441,6 +1563,7 @@
             performance e tecnologia.
           </p>
 
+
         </div>
 
 
@@ -1451,6 +1574,7 @@
           <h3>
             Serviços
           </h3>
+
 
           <a href="#servicos">
             Estratégia de Marketing
@@ -1479,6 +1603,7 @@
             Empresa
           </h3>
 
+
           <a href="#sobre">
             Sobre
           </a>
@@ -1506,6 +1631,7 @@
             Contato
           </h3>
 
+
           <a
             href="https://wa.me/5511947859304"
             target="_blank"
@@ -1514,13 +1640,14 @@
             (11) 94785-9304
           </a>
 
-          <a
-            href="mailto:contatojessica.tecnologia@gmail.com"
-          >
+
+          <a href="mailto:contatojessica.tecnologia@gmail.com">
             contatojessica.tecnologia@gmail.com
           </a>
 
+
         </div>
+
 
       </div>
 
@@ -1531,11 +1658,13 @@
           © 2026 Jhe Tecnologia. Todos os direitos reservados.
         </span>
 
+
         <a href="#inicio">
           Voltar ao início
         </a>
 
       </div>
+
 
     </div>
 
@@ -1567,8 +1696,14 @@
   </a>
 
 
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
   <script src="script.js"></script>
+
 
 </body>
 
 </html>
+```
