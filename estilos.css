@@ -1598,12 +1598,12 @@ button {
 
 .faq {
   max-width: 850px;
-
   margin: 0 auto;
 }
 
 .faq details {
   border-bottom: 1px solid rgba(91, 51, 245, 0.11);
+  height: auto;
 }
 
 .faq details:first-child {
@@ -1612,22 +1612,15 @@ button {
 
 .faq summary {
   display: flex;
-
   align-items: center;
   justify-content: space-between;
-
   gap: 20px;
-
   padding: 22px 0;
-
   color: var(--dark);
-
   font-size: 15px;
-
   font-weight: 700;
-
+  line-height: 1.5;
   cursor: pointer;
-
   list-style: none;
 }
 
@@ -1637,27 +1630,17 @@ button {
 
 .faq summary span {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   width: 28px;
   height: 28px;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
   background: rgba(91, 51, 245, 0.07);
-
   color: var(--primary);
-
   font-size: 18px;
-
   font-weight: 400;
-
-  transition:
-    transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .faq details[open] summary span {
@@ -1665,6 +1648,16 @@ button {
 }
 
 .faq details p {
+  display: block;
+  max-width: 760px;
+  margin: 0;
+  padding: 0 50px 22px 0;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+  height: auto;
+  overflow: visible;
+}
   max-width: 760px;
 
   padding: 0 50px 22px 0;
