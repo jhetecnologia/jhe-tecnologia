@@ -146,7 +146,6 @@ button {
   white-space: nowrap;
 }
 
-/* Logo real da Jhe Tecnologia */
 .logo-image {
   height: 52px;
   width: auto;
@@ -554,6 +553,7 @@ button {
   position: relative;
 
   width: 100%;
+
   max-width: 520px;
 
   padding: 25px;
@@ -677,7 +677,6 @@ button {
 
   line-height: 1.1;
 
-  /* Preparado para os números animados */
   font-variant-numeric: tabular-nums;
 }
 
@@ -816,7 +815,6 @@ button {
 @keyframes chartGrow {
   from {
     transform: scaleY(0);
-
     transform-origin: bottom;
   }
 
@@ -886,8 +884,7 @@ button {
 
   display: grid;
 
-  grid-template-columns:
-    repeat(6, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 
   align-items: center;
 
@@ -967,8 +964,7 @@ button {
 .pain-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
 }
@@ -1077,8 +1073,7 @@ button {
 .services-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
 }
@@ -1204,8 +1199,7 @@ button {
 .features {
   display: grid;
 
-  grid-template-columns:
-    repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 18px;
 }
@@ -1367,8 +1361,7 @@ button {
 .process {
   display: grid;
 
-  grid-template-columns:
-    repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
 
   gap: 0;
 }
@@ -1431,8 +1424,7 @@ button {
 .plans-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 
   gap: 20px;
 
@@ -1597,13 +1589,21 @@ button {
 }
 
 .faq {
+  width: 100%;
+
   max-width: 850px;
+
   margin: 0 auto;
 }
 
 .faq details {
+  width: 100%;
+
   border-bottom: 1px solid rgba(91, 51, 245, 0.11);
+
   height: auto;
+
+  overflow: visible;
 }
 
 .faq details:first-child {
@@ -1612,15 +1612,27 @@ button {
 
 .faq summary {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
+
+  width: 100%;
+
   gap: 20px;
+
   padding: 22px 0;
+
   color: var(--dark);
+
   font-size: 15px;
+
   font-weight: 700;
+
   line-height: 1.5;
+
   cursor: pointer;
+
   list-style: none;
 }
 
@@ -1628,27 +1640,55 @@ button {
   display: none;
 }
 
-.faq summary span {
+.faq summary::marker {
+  display: none;
+}
+
+.faq summary span:first-child {
+  flex: 1 1 auto;
+
+  min-width: 0;
+
+  display: block;
+
+  line-height: 1.5;
+}
+
+.faq summary span:last-child {
   display: flex;
+
   align-items: center;
+
   justify-content: center;
+
   width: 28px;
   height: 28px;
-  flex-shrink: 0;
+
+  flex: 0 0 28px;
+
   border-radius: 50%;
+
   background: rgba(91, 51, 245, 0.07);
+
   color: var(--primary);
+
   font-size: 18px;
+
   font-weight: 400;
+
+  line-height: 1;
+
   transition: transform 0.2s ease;
 }
 
-.faq details[open] summary span {
+.faq details[open] summary span:last-child {
   transform: rotate(45deg);
 }
 
 .faq details p {
   display: block;
+
+  width: 100%;
 
   max-width: 760px;
 
@@ -1660,12 +1700,25 @@ button {
 
   font-size: 14px;
 
+  font-weight: 400;
+
   line-height: 1.7;
 
   height: auto;
 
+  min-height: 0;
+
   overflow: visible;
+
+  white-space: normal;
+
+  word-break: normal;
+
+  overflow-wrap: break-word;
+
+  box-sizing: border-box;
 }
+
 
 /* =========================================================
    SEO
@@ -1737,6 +1790,7 @@ button {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 50px;
@@ -1844,8 +1898,7 @@ button {
 
   font-size: 12px;
 
-  transition:
-    color 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .footer-column a:hover {
@@ -1856,6 +1909,7 @@ button {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
   gap: 20px;
@@ -1954,7 +2008,6 @@ button {
    ========================================================= */
 
 @media (max-width: 1100px) {
-
   .hero-grid {
     grid-template-columns:
       minmax(0, 1fr)
@@ -1972,13 +2025,11 @@ button {
   }
 
   .platform-list {
-    grid-template-columns:
-      repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .features {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer-grid {
@@ -1994,7 +2045,6 @@ button {
 
 
 @media (max-width: 900px) {
-
   .nav {
     gap: 20px;
   }
@@ -2011,6 +2061,7 @@ button {
 
   .hero-content > p {
     margin-left: auto;
+
     margin-right: auto;
   }
 
@@ -2032,8 +2083,7 @@ button {
 
   .pain-grid,
   .services-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .split {
@@ -2051,8 +2101,7 @@ button {
   }
 
   .process {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 35px;
   }
@@ -2078,14 +2127,12 @@ button {
   }
 
   .footer-grid {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 
 @media (max-width: 760px) {
-
   .header {
     height: 72px;
   }
@@ -2098,6 +2145,7 @@ button {
     position: absolute;
 
     top: 72px;
+
     left: 20px;
     right: 20px;
 
@@ -2143,6 +2191,7 @@ button {
 
   .hero {
     padding-top: 125px;
+
     padding-bottom: 75px;
   }
 
@@ -2167,8 +2216,7 @@ button {
   }
 
   .platform-list {
-    grid-template-columns:
-      repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
     gap: 12px;
   }
@@ -2239,7 +2287,6 @@ button {
 
 
 @media (max-width: 600px) {
-
   .container {
     width: min(
       calc(100% - 30px),
@@ -2317,8 +2364,7 @@ button {
   .metric {
     display: grid;
 
-    grid-template-columns:
-      1fr auto;
+    grid-template-columns: 1fr auto;
 
     align-items: center;
 
@@ -2380,17 +2426,43 @@ button {
     font-size: 36px;
   }
 
+
+  /* =======================================================
+     FAQ MOBILE
+     ======================================================= */
+
   .faq summary {
     font-size: 14px;
 
     padding: 19px 0;
+
+    line-height: 1.5;
+  }
+
+  .faq summary span:first-child {
+    line-height: 1.5;
   }
 
   .faq details p {
-    padding-right: 25px;
+    width: 100%;
+
+    padding: 0 25px 20px 0;
 
     font-size: 13px;
+
+    line-height: 1.7;
+
+    height: auto;
+
+    min-height: 0;
+
+    overflow: visible;
+
+    white-space: normal;
+
+    overflow-wrap: break-word;
   }
+
 
   .seo-box {
     padding: 30px 20px;
@@ -2422,6 +2494,7 @@ button {
 
   .whatsapp {
     right: 15px;
+
     bottom: 15px;
 
     width: 52px;
@@ -2440,7 +2513,6 @@ button {
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
   html {
     scroll-behavior: auto;
   }
