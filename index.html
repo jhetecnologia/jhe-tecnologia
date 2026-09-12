@@ -1,2389 +1,1708 @@
-:root {
-  --primary: #5B33F5;
-  --primary-dark: #4326C9;
-  --secondary: #24BAEF;
-  --orange: #FF6839;
-
-  --dark: #151225;
-  --dark-2: #211B38;
-
-  --text: #4F4960;
-  --muted: #8F899F;
-
-  --white: #FFFFFF;
-
-  --light: #FAF9FF;
-  --light-2: #F4F1FF;
-
-  --border: rgba(91, 51, 245, 0.12);
-
-  --shadow: 0 18px 50px rgba(67, 38, 201, 0.08);
-
-  --radius: 24px;
-
-  --container: 1180px;
-}
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
 
-/* =========================================================
-   RESET
-========================================================= */
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <meta
+    name="description"
+    content="Jhe Tecnologia | Agência de Marketing Digital com Tráfego Pago, Presença Digital Local, Criação de Sites e soluções digitais para empresas."
+  >
 
-html {
-  scroll-behavior: smooth;
-}
+  <meta
+    name="author"
+    content="Jhe Tecnologia"
+  >
 
-body {
-  font-family: "Inter", Arial, sans-serif;
-  background: var(--white);
-  color: var(--text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
+  <meta
+    name="robots"
+    content="index, follow"
+  >
 
-body,
-button,
-input,
-textarea,
-select {
-  font-family: "Inter", Arial, sans-serif;
-}
+  <meta
+    name="theme-color"
+    content="#5B33F5"
+  >
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
+  <link
+    rel="canonical"
+    href="https://www.jhetecnologia.com.br/"
+  >
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  <meta
+    property="og:title"
+    content="Jhe Tecnologia | Marketing Digital e Performance"
+  >
 
-button,
-input,
-textarea,
-select {
-  font: inherit;
-}
+  <meta
+    property="og:description"
+    content="Marketing Digital, Tráfego Pago, Presença Digital Local e Criação de Sites para empresas."
+  >
 
-button {
-  border: 0;
-  cursor: pointer;
-}
+  <meta
+    property="og:type"
+    content="website"
+  >
 
-ul {
-  list-style: none;
-}
+  <meta
+    property="og:url"
+    content="https://www.jhetecnologia.com.br/"
+  >
 
-section {
-  scroll-margin-top: 85px;
-}
+  <title>Jhe Tecnologia | Marketing Digital e Performance</title>
 
-::selection {
-  background: rgba(91, 51, 245, 0.18);
-  color: var(--dark);
-}
 
-:focus-visible {
-  outline: 3px solid rgba(36, 186, 239, 0.55);
-  outline-offset: 4px;
-}
+  <!-- =====================================================
+       FONTES
+       ===================================================== -->
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
 
-/* =========================================================
-   CONTAINER
-========================================================= */
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
-.container {
-  width: min(calc(100% - 40px), var(--container));
-  margin: 0 auto;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
 
-/* =========================================================
-   HEADER
-========================================================= */
+  <!-- =====================================================
+       CSS
+       ===================================================== -->
 
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  <link
+    rel="stylesheet"
+    href="estilos.css"
+  >
 
-  z-index: 1000;
 
-  background: rgba(255, 255, 255, 0.94);
+  <!-- =====================================================
+       GOOGLE ADS
+       ===================================================== -->
 
-  border-bottom: 1px solid rgba(91, 51, 245, 0.08);
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-17945711429"
+  ></script>
 
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
+  <script>
+    window.dataLayer = window.dataLayer || [];
 
-.header-content {
-  min-height: 78px;
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    gtag("js", new Date());
 
-  gap: 30px;
-}
+    gtag("config", "AW-17945711429");
+  </script>
 
-.logo {
-  display: inline-flex;
-  align-items: center;
+</head>
 
-  flex-shrink: 0;
-}
 
-.logo-image {
-  width: 145px;
-  height: auto;
-}
+<body>
 
-.nav {
-  display: flex;
-  align-items: center;
 
-  gap: 28px;
-}
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
 
-.nav a {
-  position: relative;
+  <header class="header">
 
-  padding: 4px 0;
+    <div class="container header-content">
 
-  font-size: 14px;
-  font-weight: 600;
+      <a
+        href="#inicio"
+        class="logo"
+        aria-label="Jhe Tecnologia - Início"
+      >
 
-  color: #5D5870;
+        <img
+          src="Logo.png"
+          alt="Jhe Tecnologia"
+          class="logo-image"
+        >
 
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
+      </a>
 
-.nav a::after {
-  content: "";
 
-  position: absolute;
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
 
-  left: 0;
-  bottom: -6px;
+        <span></span>
+        <span></span>
+        <span></span>
 
-  width: 0;
-  height: 2px;
+      </button>
 
-  border-radius: 999px;
 
-  background: var(--primary);
+      <nav
+        class="nav"
+        id="menu-principal"
+      >
 
-  transition: width 0.25s ease;
-}
+        <a href="#inicio">
+          Início
+        </a>
 
-.nav a:hover {
-  color: var(--primary);
-}
+        <a href="#servicos">
+          Serviços
+        </a>
 
-.nav a:hover::after {
-  width: 100%;
-}
+        <a href="#diferenciais">
+          Diferenciais
+        </a>
 
-.menu-toggle {
-  display: none;
+        <a href="#sobre">
+          Sobre
+        </a>
 
-  width: 44px;
-  height: 44px;
+        <a href="#investimentos">
+          Investimentos
+        </a>
 
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+        <a href="#contato">
+          Contato
+        </a>
 
-  gap: 5px;
+      </nav>
 
-  border-radius: 12px;
+    </div>
 
-  background: var(--light-2);
-  color: var(--primary);
-}
+  </header>
 
-.menu-toggle span {
-  display: block;
 
-  width: 20px;
-  height: 2px;
+  <main>
 
-  border-radius: 999px;
 
-  background: currentColor;
+    <!-- ===================================================
+         HERO
+         =================================================== -->
 
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease;
-}
+    <section
+      class="hero"
+      id="inicio"
+    >
 
+      <div class="container hero-grid">
 
-/* =========================================================
-   HERO
-========================================================= */
 
-.hero {
-  position: relative;
+        <div class="hero-content reveal">
 
-  min-height: 720px;
+          <span class="eyebrow">
+            Agência de Marketing Digital
+          </span>
 
-  display: flex;
-  align-items: center;
 
-  padding: 145px 0 90px;
+          <h1>
+            Marketing Digital para atrair mais clientes para sua empresa.
+          </h1>
 
-  overflow: hidden;
 
-  background:
-    radial-gradient(
-      circle at 88% 12%,
-      rgba(36, 186, 239, 0.12),
-      transparent 27%
-    ),
-    radial-gradient(
-      circle at 8% 82%,
-      rgba(91, 51, 245, 0.08),
-      transparent 30%
-    ),
-    var(--white);
-}
+          <p>
+            Estratégias digitais para fortalecer a presença da sua empresa,
+            gerar oportunidades e apoiar decisões mais eficientes.
+          </p>
 
-.hero::before {
-  content: "";
 
-  position: absolute;
+          <div class="hero-buttons">
 
-  width: 500px;
-  height: 500px;
+            <a
+              href="https://wa.me/5511947859304?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20de%20Marketing%20Digital."
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
 
-  top: -220px;
-  right: -190px;
 
-  border-radius: 50%;
+            <a
+              href="#servicos"
+              class="btn btn-secondary"
+            >
+              Conhecer serviços
+            </a>
 
-  background: rgba(91, 51, 245, 0.045);
+          </div>
 
-  pointer-events: none;
-}
 
-.hero-grid {
-  position: relative;
-  z-index: 1;
+          <div class="hero-trust">
 
-  display: grid;
+            <span>Estratégia</span>
+            <span>Performance</span>
+            <span>Dados</span>
+            <span>Tecnologia</span>
 
-  grid-template-columns:
-    minmax(0, 1.05fr)
-    minmax(390px, 0.95fr);
+          </div>
 
-  align-items: center;
+        </div>
 
-  gap: 70px;
-}
 
-.hero-content {
-  max-width: 680px;
-}
+        <!-- =================================================
+             DASHBOARD
+             ================================================= -->
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
+        <div class="hero-visual reveal">
 
-  gap: 9px;
+          <div class="dashboard">
 
-  margin-bottom: 20px;
 
-  font-size: 12px;
-  font-weight: 800;
+            <div class="dashboard-top">
 
-  letter-spacing: 0.09em;
+              <div>
 
-  text-transform: uppercase;
+                <small>
+                  VISÃO GERAL
+                </small>
 
-  color: var(--primary);
-}
+                <strong>
+                  Performance Digital
+                </strong>
 
-.eyebrow::before {
-  content: "";
+              </div>
 
-  width: 28px;
-  height: 2px;
+              <span class="dashboard-dot"></span>
 
-  border-radius: 999px;
+            </div>
 
-  background: var(--secondary);
 
-  flex-shrink: 0;
-}
+            <div class="metrics">
 
-.hero h1 {
-  max-width: 760px;
 
-  font-size: clamp(42px, 5vw, 68px);
+              <div class="metric">
 
-  line-height: 1.04;
+                <span>
+                  Conversões
+                </span>
 
-  letter-spacing: -0.045em;
+                <strong
+                  class="counter"
+                  data-target="38"
+                  data-prefix="+"
+                  data-suffix="%"
+                >
+                  +0%
+                </strong>
 
-  color: var(--dark);
-}
+                <small>
+                  indicador acompanhado
+                </small>
 
-/* Corrigido para o HTML atual */
-.hero-content > p {
-  max-width: 640px;
+              </div>
 
-  margin-top: 25px;
 
-  font-size: 18px;
+              <div class="metric">
 
-  line-height: 1.75;
+                <span>
+                  Cliques
+                </span>
 
-  color: var(--text);
-}
+                <strong
+                  class="counter"
+                  data-target="24"
+                  data-prefix="+"
+                  data-suffix="%"
+                >
+                  +0%
+                </strong>
 
-.hero-buttons {
-  display: flex;
-  align-items: center;
+                <small>
+                  evolução monitorada
+                </small>
 
-  flex-wrap: wrap;
+              </div>
 
-  gap: 14px;
 
-  margin-top: 34px;
-}
+              <div class="metric">
 
-.hero-trust {
-  display: flex;
-  align-items: center;
+                <span>
+                  Oportunidades
+                </span>
 
-  flex-wrap: wrap;
+                <strong
+                  class="counter"
+                  data-target="31"
+                  data-prefix="+"
+                  data-suffix="%"
+                >
+                  +0%
+                </strong>
 
-  gap: 9px;
+                <small>
+                  análise de performance
+                </small>
 
-  margin-top: 32px;
-}
+              </div>
 
-.hero-trust span {
-  display: inline-flex;
-  align-items: center;
 
-  padding: 8px 13px;
+            </div>
 
-  border: 1px solid rgba(91, 51, 245, 0.10);
 
-  border-radius: 999px;
+            <div class="chart-area">
 
-  background: rgba(250, 249, 255, 0.9);
+              <div class="chart-labels">
 
-  font-size: 11px;
-  font-weight: 700;
+                <span>
+                  Indicadores
+                </span>
 
-  color: #625C73;
-}
+                <span>
+                  Acompanhamento
+                </span>
 
-.hero-trust span::before {
-  content: "";
+              </div>
 
-  width: 6px;
-  height: 6px;
 
-  margin-right: 7px;
+              <div class="chart">
 
-  border-radius: 50%;
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
+                <i></i>
 
-  background: var(--secondary);
-}
+              </div>
 
+            </div>
 
-/* =========================================================
-   BUTTONS
-========================================================= */
 
-.btn {
-  min-height: 52px;
+            <div class="dashboard-footer">
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+              <span>
+                Google Ads
+              </span>
 
-  padding: 0 23px;
+              <span>
+                Meta Ads
+              </span>
 
-  border-radius: 14px;
+              <span>
+                Analytics
+              </span>
 
-  font-size: 14px;
-  font-weight: 800;
+            </div>
 
-  white-space: nowrap;
+          </div>
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease;
-}
+        </div>
 
-.btn:hover {
-  transform: translateY(-2px);
-}
+      </div>
 
-.btn-primary {
-  color: var(--white);
+    </section>
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--primary-dark)
-    );
 
-  box-shadow:
-    0 12px 30px rgba(91, 51, 245, 0.22);
-}
+    <!-- ===================================================
+         PROBLEMAS
+         =================================================== -->
 
-.btn-primary:hover {
-  box-shadow:
-    0 16px 35px rgba(91, 51, 245, 0.30);
-}
+    <section class="section pain-section">
 
-.btn-secondary,
-.btn-outline {
-  color: var(--primary);
+      <div class="container">
 
-  background: var(--white);
 
-  border: 1px solid rgba(91, 51, 245, 0.18);
-}
+        <div class="section-heading center reveal">
 
-.btn-secondary:hover,
-.btn-outline:hover {
-  background: var(--light);
+          <span class="eyebrow">
+            ANTES DE INVESTIR MAIS
+          </span>
 
-  border-color: rgba(91, 51, 245, 0.30);
-}
+          <h2>
+            Seu marketing está realmente ajudando o seu negócio?
+          </h2>
 
-.btn-white {
-  color: var(--primary);
+        </div>
 
-  background: var(--white);
 
-  box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.14);
-}
+        <div class="pain-grid">
 
-.btn-white:hover {
-  background: #F8F7FF;
 
-  box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.18);
-}
+          <article class="pain-card reveal">
 
+            <span>
+              01
+            </span>
 
-/* =========================================================
-   HERO DASHBOARD
-========================================================= */
+            <h3>
+              Investe em anúncios, mas não sabe o que está funcionando?
+            </h3>
 
-.hero-visual {
-  width: 100%;
-}
+            <p>
+              Sem acompanhamento adequado, fica difícil identificar
+              quais campanhas e ações estão contribuindo para o resultado.
+            </p>
 
-.dashboard {
-  position: relative;
+          </article>
 
-  width: 100%;
 
-  padding: 24px;
+          <article class="pain-card reveal">
 
-  border: 1px solid rgba(91, 51, 245, 0.10);
+            <span>
+              02
+            </span>
 
-  border-radius: 28px;
+            <h3>
+              Sua empresa está no Google, mas não aparece para quem procura?
+            </h3>
 
-  background: rgba(255, 255, 255, 0.94);
+            <p>
+              Uma presença local bem estruturada aumenta as chances
+              de sua empresa ser encontrada por quem já procura pelo
+              que você oferece.
+            </p>
 
-  box-shadow:
-    0 30px 80px rgba(67, 38, 201, 0.12);
+          </article>
 
-  overflow: hidden;
-}
 
-.dashboard::before {
-  content: "";
+          <article class="pain-card reveal">
 
-  position: absolute;
+            <span>
+              03
+            </span>
 
-  width: 270px;
-  height: 270px;
+            <h3>
+              Você faz várias ações digitais, mas elas não conversam entre si?
+            </h3>
 
-  top: -110px;
-  right: -110px;
+            <p>
+              Canais, campanhas e presença digital precisam estar
+              alinhados aos objetivos do negócio.
+            </p>
 
-  border-radius: 50%;
+          </article>
 
-  background: rgba(36, 186, 239, 0.10);
 
-  pointer-events: none;
-}
+        </div>
 
-.dashboard-top {
-  position: relative;
-  z-index: 1;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+        <div class="pain-closing reveal">
 
-  gap: 15px;
+          <strong>
+            Cada ação precisa ter um propósito.
+          </strong>
 
-  margin-bottom: 22px;
-}
+          <span>
+            O ponto de partida é entender o negócio e seus objetivos.
+          </span>
 
-.dashboard-top small {
-  display: block;
+        </div>
 
-  font-size: 10px;
-  font-weight: 800;
 
-  letter-spacing: 0.10em;
+      </div>
 
-  text-transform: uppercase;
+    </section>
 
-  color: var(--muted);
-}
 
-.dashboard-top strong {
-  display: block;
+    <!-- ===================================================
+         SERVIÇOS
+         =================================================== -->
 
-  margin-top: 3px;
+    <section
+      class="section services-section"
+      id="servicos"
+    >
 
-  font-size: 18px;
-  font-weight: 800;
+      <div class="container">
 
-  color: var(--dark);
-}
 
-.dashboard-dot {
-  width: 10px;
-  height: 10px;
+        <div class="section-heading center reveal">
 
-  flex-shrink: 0;
+          <span class="eyebrow">
+            SERVIÇOS
+          </span>
 
-  border-radius: 50%;
+          <h2>
+            Soluções para construir, divulgar e otimizar sua presença digital.
+          </h2>
 
-  background: #36C97D;
+          <p>
+            Escolha a frente que sua empresa precisa desenvolver
+            ou combine diferentes soluções de acordo com o projeto.
+          </p>
 
-  box-shadow:
-    0 0 0 5px rgba(54, 201, 125, 0.10);
-}
+        </div>
 
-.metrics {
-  position: relative;
-  z-index: 1;
 
-  display: grid;
+        <div class="services-grid">
 
-  grid-template-columns: repeat(3, 1fr);
 
-  gap: 12px;
-}
+          <!-- ESTRATÉGIA -->
 
-.metric {
-  min-width: 0;
+          <article class="card service-card reveal">
 
-  padding: 16px;
+            <div class="service-icon">
+              01
+            </div>
 
-  border: 1px solid rgba(91, 51, 245, 0.08);
+            <h3>
+              Estratégia de Marketing
+            </h3>
 
-  border-radius: 18px;
+            <p>
+              Planejamento das ações digitais de acordo com os objetivos,
+              público e momento da empresa.
+            </p>
 
-  background: var(--light);
-}
+            <a
+              href="https://wa.me/5511947859304?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Estratégia%20de%20Marketing."
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
 
-.metric > span {
-  display: block;
+          </article>
 
-  font-size: 11px;
-  font-weight: 700;
 
-  color: var(--muted);
-}
+          <!-- TRÁFEGO -->
 
-.metric > strong {
-  display: block;
+          <article class="card service-card reveal">
 
-  margin-top: 4px;
+            <div class="service-icon">
+              02
+            </div>
 
-  font-size: 23px;
-  font-weight: 900;
+            <h3>
+              Tráfego Pago
+            </h3>
 
-  line-height: 1.15;
+            <p>
+              Gestão de campanhas no Google Ads e Meta Ads,
+              com acompanhamento, testes e otimizações.
+            </p>
 
-  letter-spacing: -0.03em;
+            <a
+              href="https://wa.me/5511947859304?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Tráfego%20Pago."
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
 
-  color: var(--dark);
-}
+          </article>
 
-.metric > small {
-  display: block;
 
-  margin-top: 5px;
+          <!-- PRESENÇA LOCAL -->
 
-  font-size: 10px;
+          <article class="card service-card reveal">
 
-  line-height: 1.4;
+            <div class="service-icon">
+              03
+            </div>
 
-  color: var(--muted);
-}
+            <h3>
+              Presença Digital Local
+            </h3>
 
-.chart-area {
-  position: relative;
-  z-index: 1;
+            <p>
+              Estruturação e otimização da presença da empresa no Google
+              para melhorar sua visibilidade nas buscas locais.
+            </p>
 
-  margin-top: 16px;
+            <a
+              href="https://wa.me/5511947859304?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Presença%20Digital%20Local."
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
 
-  padding: 17px;
+          </article>
 
-  border-radius: 18px;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(91, 51, 245, 0.05),
-      rgba(91, 51, 245, 0.015)
-    );
+          <!-- SITES -->
 
-  overflow: hidden;
-}
+          <article class="card service-card reveal">
 
-.chart-labels {
-  position: relative;
-  z-index: 2;
+            <div class="service-icon">
+              04
+            </div>
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+            <h3>
+              Criação de Sites
+            </h3>
 
-  gap: 10px;
+            <p>
+              Sites profissionais, responsivos e estruturados para
+              apresentar a empresa e facilitar a geração de oportunidades.
+            </p>
 
-  font-size: 10px;
-  font-weight: 700;
+            <a
+              href="https://wa.me/5511947859304?text=Olá!%20Gostaria%20de%20solicitar%20um%20orçamento%20para%20Criação%20de%20Sites."
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
 
-  color: var(--muted);
-}
+          </article>
 
-.chart {
-  position: relative;
 
-  height: 145px;
+        </div>
 
-  margin-top: 8px;
+      </div>
 
-  overflow: hidden;
+    </section>
 
-  background:
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0,
-      transparent 35px,
-      rgba(91, 51, 245, 0.055) 36px
-    );
-}
 
-.chart::before {
-  content: "";
+    <!-- ===================================================
+         DIFERENCIAIS
+         =================================================== -->
 
-  position: absolute;
+    <section
+      class="section dark"
+      id="diferenciais"
+    >
 
-  left: 0;
-  right: 0;
+      <div class="container">
 
-  bottom: 20px;
 
-  height: 3px;
+        <div class="section-heading dark-heading reveal">
 
-  border-radius: 999px;
+          <span class="eyebrow">
+            DIFERENCIAIS
+          </span>
 
-  background:
-    linear-gradient(
-      90deg,
-      var(--secondary) 0%,
-      var(--primary) 35%,
-      var(--orange) 65%,
-      var(--primary) 100%
-    );
+          <h2>
+            Marketing conectado aos objetivos do negócio.
+          </h2>
 
-  transform:
-    rotate(-4deg)
-    translateY(-18px);
+          <p>
+            Planejamento, mídia, análise e tecnologia trabalhando
+            em conjunto para dar mais direção às ações digitais.
+          </p>
 
-  box-shadow:
-    0 6px 16px rgba(91, 51, 245, 0.15);
-}
+        </div>
 
-.chart::after {
-  content: "";
 
-  position: absolute;
+        <div class="features">
 
-  left: 0;
-  right: 0;
 
-  bottom: 0;
+          <article class="feature reveal">
 
-  height: 50px;
+            <span>
+              01
+            </span>
 
-  background:
-    linear-gradient(
-      to top,
-      rgba(91, 51, 245, 0.05),
-      transparent
-    );
+            <h3>
+              Planejamento personalizado
+            </h3>
 
-  clip-path:
-    polygon(
-      0 100%,
-      0 65%,
-      15% 70%,
-      28% 45%,
-      42% 58%,
-      56% 28%,
-      70% 42%,
-      84% 18%,
-      100% 30%,
-      100% 100%
-    );
-}
+            <p>
+              As ações são definidas considerando os objetivos,
+              público e realidade de cada negócio.
+            </p>
 
-.chart i {
-  position: absolute;
+          </article>
 
-  width: 7px;
-  height: 7px;
 
-  border-radius: 50%;
+          <article class="feature reveal">
 
-  background: var(--white);
+            <span>
+              02
+            </span>
 
-  border: 2px solid var(--primary);
+            <h3>
+              Gestão de campanhas
+            </h3>
 
-  z-index: 3;
-}
+            <p>
+              Campanhas acompanhadas de perto para identificar
+              oportunidades e realizar ajustes.
+            </p>
 
-.chart i:nth-child(1) {
-  left: 4%;
-  top: 70%;
-}
+          </article>
 
-.chart i:nth-child(2) {
-  left: 19%;
-  top: 64%;
-}
 
-.chart i:nth-child(3) {
-  left: 34%;
-  top: 45%;
-}
+          <article class="feature reveal">
 
-.chart i:nth-child(4) {
-  left: 49%;
-  top: 53%;
-}
+            <span>
+              03
+            </span>
 
-.chart i:nth-child(5) {
-  left: 64%;
-  top: 31%;
-}
+            <h3>
+              Decisões orientadas por dados
+            </h3>
 
-.chart i:nth-child(6) {
-  left: 79%;
-  top: 42%;
-}
+            <p>
+              Métricas e indicadores ajudam a avaliar o desempenho
+              e direcionar os próximos passos.
+            </p>
 
-.chart i:nth-child(7) {
-  right: 2%;
-  top: 27%;
-}
+          </article>
 
-.dashboard-footer {
-  position: relative;
-  z-index: 1;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+          <article class="feature reveal">
 
-  gap: 10px;
+            <span>
+              04
+            </span>
 
-  margin-top: 16px;
+            <h3>
+              Visão integrada
+            </h3>
 
-  font-size: 10px;
-  font-weight: 700;
+            <p>
+              Site, anúncios, presença local e dados podem trabalhar
+              juntos dentro de uma mesma estrutura digital.
+            </p>
 
-  color: var(--muted);
-}
+          </article>
 
 
-/* =========================================================
-   GENERIC SECTION
-========================================================= */
+        </div>
 
-.section {
-  padding: 105px 0;
-}
+      </div>
 
-.pain-section,
-.services-section,
-.about-section,
-.process-section,
-.plans-section,
-.faq-section {
-  background: var(--white);
-}
+    </section>
 
-.section-heading {
-  max-width: 780px;
 
-  margin-bottom: 50px;
-}
+    <!-- ===================================================
+         SOBRE
+         =================================================== -->
 
-.section-heading.center {
-  margin-left: auto;
-  margin-right: auto;
+    <section
+      class="section about-section"
+      id="sobre"
+    >
 
-  text-align: center;
-}
+      <div class="container split">
 
-.section-heading .eyebrow {
-  margin-bottom: 15px;
-}
 
-.section-heading h2 {
-  font-size: clamp(32px, 4vw, 48px);
+        <div class="about-content reveal">
 
-  line-height: 1.10;
+          <span class="eyebrow">
+            SOBRE A JHE TECNOLOGIA
+          </span>
 
-  letter-spacing: -0.035em;
+          <h2>
+            Marketing pensado para o negócio.
+          </h2>
 
-  color: var(--dark);
-}
 
-.section-heading p {
-  max-width: 700px;
+          <p>
+            A Jhe Tecnologia atua como parceira de Marketing Digital
+            para empresas que precisam organizar sua presença online,
+            atrair oportunidades e acompanhar o que realmente importa.
+          </p>
 
-  margin-top: 17px;
 
-  font-size: 17px;
+          <p>
+            Cada projeto parte do cenário e dos objetivos da empresa,
+            combinando canais, conteúdo, mídia e tecnologia de acordo
+            com a necessidade. O acompanhamento dos indicadores ajuda
+            a identificar o que funciona e onde é preciso ajustar.
+          </p>
 
-  line-height: 1.75;
+        </div>
 
-  color: var(--text);
-}
 
-.section-heading.center p {
-  margin-left: auto;
-  margin-right: auto;
-}
+        <div class="about-highlights">
 
 
-/* =========================================================
-   PAIN
-========================================================= */
+          <div class="highlight reveal">
 
-.pain-grid {
-  display: grid;
+            <strong>
+              01
+            </strong>
 
-  grid-template-columns: repeat(3, 1fr);
+            <span>
+              Planejamento estratégico
+            </span>
 
-  gap: 20px;
-}
+          </div>
 
-.pain-card {
-  position: relative;
 
-  padding: 30px;
+          <div class="highlight reveal">
 
-  border: 1px solid rgba(91, 51, 245, 0.09);
+            <strong>
+              02
+            </strong>
 
-  border-radius: var(--radius);
+            <span>
+              Gestão de campanhas
+            </span>
 
-  background: var(--white);
+          </div>
 
-  box-shadow:
-    0 15px 45px rgba(67, 38, 201, 0.05);
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
+          <div class="highlight reveal">
 
-.pain-card:hover {
-  transform: translateY(-4px);
+            <strong>
+              03
+            </strong>
 
-  border-color: rgba(91, 51, 245, 0.17);
+            <span>
+              Análise de indicadores
+            </span>
 
-  box-shadow:
-    0 20px 50px rgba(67, 38, 201, 0.08);
-}
+          </div>
 
-.pain-card > span {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  width: 38px;
-  height: 38px;
+          <div class="highlight reveal">
 
-  margin-bottom: 23px;
+            <strong>
+              04
+            </strong>
 
-  border-radius: 12px;
+            <span>
+              Estrutura digital
+            </span>
 
-  background: rgba(91, 51, 245, 0.08);
+          </div>
 
-  font-size: 12px;
-  font-weight: 850;
 
-  color: var(--primary);
-}
+        </div>
 
-.pain-card h3 {
-  margin-bottom: 10px;
+      </div>
 
-  font-size: 19px;
+    </section>
 
-  line-height: 1.35;
 
-  color: var(--dark);
-}
+    <!-- ===================================================
+         PROCESSO
+         =================================================== -->
 
-.pain-card p {
-  font-size: 14px;
+    <section class="section process-section">
 
-  line-height: 1.7;
+      <div class="container">
 
-  color: var(--text);
-}
 
-.pain-closing {
-  max-width: 720px;
+        <div class="section-heading reveal">
 
-  margin: 38px auto 0;
+          <span class="eyebrow">
+            COMO FUNCIONA
+          </span>
 
-  text-align: center;
-}
+          <h2>
+            Um processo claro para transformar planejamento em ação.
+          </h2>
 
-.pain-closing strong {
-  display: block;
+          <p>
+            Cada etapa ajuda a entender o cenário, executar as ações
+            e acompanhar o que os indicadores mostram.
+          </p>
 
-  font-size: 22px;
+        </div>
 
-  color: var(--dark);
-}
 
-.pain-closing span {
-  display: block;
+        <div class="process">
 
-  margin-top: 7px;
 
-  font-size: 15px;
+          <article class="process-item reveal">
 
-  color: var(--text);
-}
+            <span>
+              01
+            </span>
 
+            <h3>
+              Diagnóstico
+            </h3>
 
-/* =========================================================
-   SERVICES
-========================================================= */
+            <p>
+              Entendimento do negócio, cenário atual, objetivos
+              e principais oportunidades.
+            </p>
 
-.services-grid {
-  display: grid;
+          </article>
 
-  grid-template-columns: repeat(4, 1fr);
 
-  gap: 18px;
-}
+          <article class="process-item reveal">
 
-.service-card {
-  position: relative;
+            <span>
+              02
+            </span>
 
-  display: flex;
-  flex-direction: column;
+            <h3>
+              Planejamento
+            </h3>
 
-  min-height: 335px;
+            <p>
+              Definição dos canais, ações e abordagens mais adequadas
+              para cada objetivo.
+            </p>
 
-  padding: 28px;
+          </article>
 
-  border: 1px solid rgba(91, 51, 245, 0.10);
 
-  border-radius: var(--radius);
+          <article class="process-item reveal">
 
-  background: var(--white);
+            <span>
+              03
+            </span>
 
-  box-shadow:
-    0 15px 40px rgba(67, 38, 201, 0.04);
+            <h3>
+              Execução
+            </h3>
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
+            <p>
+              Implementação das campanhas, estruturas e soluções
+              definidas no planejamento.
+            </p>
 
-.service-card:hover {
-  transform: translateY(-5px);
+          </article>
 
-  border-color: rgba(91, 51, 245, 0.18);
 
-  box-shadow:
-    0 22px 50px rgba(67, 38, 201, 0.09);
-}
+          <article class="process-item reveal">
 
-.service-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+            <span>
+              04
+            </span>
 
-  width: 48px;
-  height: 48px;
+            <h3>
+              Otimização
+            </h3>
 
-  margin-bottom: 22px;
+            <p>
+              Acompanhamento dos indicadores, testes e ajustes
+              para melhorar continuamente as ações.
+            </p>
 
-  border-radius: 15px;
+          </article>
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(91, 51, 245, 0.12),
-      rgba(36, 186, 239, 0.12)
-    );
 
-  font-size: 12px;
-  font-weight: 850;
+        </div>
 
-  color: var(--primary);
-}
+      </div>
 
-.service-card h3 {
-  margin-bottom: 11px;
+    </section>
 
-  font-size: 19px;
 
-  line-height: 1.3;
+    <!-- ===================================================
+         INVESTIMENTOS
+         =================================================== -->
 
-  color: var(--dark);
-}
+    <section
+      class="section plans-section"
+      id="investimentos"
+    >
 
-.service-card p {
-  font-size: 14px;
+      <div class="container">
 
-  line-height: 1.7;
 
-  color: var(--text);
-}
+        <div class="section-heading center reveal">
 
-.service-card .btn {
-  margin-top: auto;
+          <span class="eyebrow">
+            INVESTIMENTOS
+          </span>
 
-  align-self: flex-start;
-}
+          <h2>
+            Soluções para diferentes necessidades.
+          </h2>
 
+          <p>
+            Escolha a frente que mais se aproxima do momento da sua
+            empresa. O escopo pode ser ajustado conforme o projeto.
+          </p>
 
-/* =========================================================
-   DARK / DIFERENCIAIS
-========================================================= */
+        </div>
 
-.dark {
-  color: var(--white);
 
-  background:
-    radial-gradient(
-      circle at 85% 15%,
-      rgba(36, 186, 239, 0.08),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
-      #151225,
-      #211B38
-    );
-}
+        <div class="plans-grid">
 
-.dark-heading h2 {
-  color: var(--white);
-}
 
-.dark-heading p {
-  color: rgba(255, 255, 255, 0.68);
-}
+          <!-- =================================================
+               ESTRATÉGIA DE MARKETING
+               ================================================= -->
 
-.dark .eyebrow {
-  color: var(--secondary);
-}
+          <article class="plan reveal">
 
-.features {
-  display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+            <div class="plan-header">
 
-  gap: 18px;
-}
+              <span class="plan-name">
+                ESTRATÉGIA DE MARKETING
+              </span>
 
-.feature {
-  padding: 30px;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+              <h3>
+                R$799
+                <small>
+                  a partir de / mês
+                </small>
+              </h3>
 
-  border-radius: var(--radius);
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.07),
-      rgba(255, 255, 255, 0.025)
-    );
+              <p>
+                Para empresas que querem organizar sua comunicação
+                e fortalecer a presença digital.
+              </p>
 
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    border-color 0.3s ease;
-}
+            </div>
 
-.feature:hover {
-  transform: translateY(-4px);
 
-  border-color: rgba(36, 186, 239, 0.20);
+            <ul>
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255, 255, 255, 0.09),
-      rgba(255, 255, 255, 0.035)
-    );
-}
+              <li>
+                Planejamento de Marketing Digital
+              </li>
 
-.feature > span {
-  display: block;
+              <li>
+                Estratégia de comunicação digital
+              </li>
 
-  margin-bottom: 22px;
+              <li>
+                Planejamento de conteúdo
+              </li>
 
-  font-size: 12px;
-  font-weight: 850;
+              <li>
+                Gestão estratégica de redes sociais
+              </li>
 
-  letter-spacing: 0.08em;
+              <li>
+                Até 8 artes digitais por mês
+              </li>
 
-  color: var(--secondary);
-}
+              <li>
+                Até 4 vídeos curtos enviados pelo cliente por mês
+              </li>
 
-.feature h3 {
-  margin-bottom: 10px;
+              <li>
+                Acompanhamento de métricas
+              </li>
 
-  font-size: 18px;
+              <li>
+                Ajustes estratégicos
+              </li>
 
-  line-height: 1.35;
+            </ul>
 
-  color: var(--white);
-}
 
-.feature p {
-  font-size: 14px;
+            <a
+              href="https://wa.me/5511947859304?text=Olá!%20Tenho%20interesse%20na%20Estratégia%20de%20Marketing%20a%20partir%20de%20R%24799%2Fmês."
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
 
-  line-height: 1.7;
 
-  color: rgba(255, 255, 255, 0.65);
-}
+          </article>
 
 
-/* =========================================================
-   SOBRE
-========================================================= */
+          <!-- =================================================
+               TRÁFEGO PAGO
+               ================================================= -->
 
-.split {
-  display: grid;
+          <article class="plan featured reveal">
 
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(360px, 0.8fr);
 
-  align-items: center;
+            <span class="plan-badge">
+              MAIS ESCOLHIDO
+            </span>
 
-  gap: 80px;
-}
 
-.about-content {
-  max-width: 680px;
-}
+            <div class="plan-header">
 
-.about-content .eyebrow {
-  margin-bottom: 16px;
-}
+              <span class="plan-name">
+                TRÁFEGO PAGO
+              </span>
 
-.about-content h2 {
-  font-size: clamp(32px, 4vw, 48px);
 
-  line-height: 1.10;
+              <h3>
+                R$499
+                <small>
+                  a partir de / mês
+                </small>
+              </h3>
 
-  letter-spacing: -0.035em;
 
-  color: var(--dark);
-}
+              <p>
+                Para empresas que querem atrair potenciais clientes
+                por meio de anúncios online.
+              </p>
 
-.about-content p {
-  margin-top: 18px;
+            </div>
 
-  font-size: 16px;
 
-  line-height: 1.8;
+            <ul>
 
-  color: var(--text);
-}
+              <li>
+                Google Ads e/ou Meta Ads
+              </li>
 
-.about-highlights {
-  display: grid;
+              <li>
+                Planejamento estratégico
+              </li>
 
-  grid-template-columns: repeat(2, 1fr);
+              <li>
+                Otimizações contínuas
+              </li>
 
-  gap: 14px;
-}
+              <li>
+                Análise de performance
+              </li>
 
-.highlight {
-  min-height: 150px;
+              <li>
+                Testes de anúncios
+              </li>
 
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+              <li>
+                Até 4 criativos para anúncios por mês
+              </li>
 
-  padding: 24px;
+            </ul>
 
-  border: 1px solid rgba(91, 51, 245, 0.10);
 
-  border-radius: 20px;
+            <a
+              href="https://wa.me/5511947859304?text=Olá!%20Tenho%20interesse%20no%20serviço%20de%20Tráfego%20Pago%20a%20partir%20de%20R%24499%2Fmês."
+              class="btn btn-primary"
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(91, 51, 245, 0.055),
-      rgba(36, 186, 239, 0.035)
-    );
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
+          </article>
 
-.highlight:hover {
-  transform: translateY(-4px);
 
-  box-shadow:
-    0 15px 35px rgba(67, 38, 201, 0.08);
-}
+          <!-- =================================================
+               PRESENÇA DIGITAL LOCAL
+               ================================================= -->
 
-.highlight strong {
-  font-size: 12px;
+          <article class="plan reveal">
 
-  letter-spacing: 0.08em;
 
-  color: var(--primary);
-}
+            <div class="plan-header">
 
-.highlight span {
-  margin-top: 25px;
+              <span class="plan-name">
+                PRESENÇA DIGITAL LOCAL
+              </span>
 
-  font-size: 15px;
-  font-weight: 750;
 
-  line-height: 1.4;
+              <h3>
+                R$399
+                <small>
+                  a partir de / mês
+                </small>
+              </h3>
 
-  color: var(--dark);
-}
 
+              <p>
+                Para empresas que querem melhorar sua presença
+                no Google e facilitar que clientes encontrem o negócio.
+              </p>
 
-/* =========================================================
-   PROCESSO
-========================================================= */
+            </div>
 
-.process {
-  display: grid;
 
-  grid-template-columns: repeat(4, 1fr);
+            <ul>
 
-  gap: 18px;
-}
+              <li>
+                Criação ou otimização do Google Perfil da Empresa
+              </li>
 
-.process-item {
-  position: relative;
+              <li>
+                Configuração e atualização das informações
+              </li>
 
-  padding: 30px;
+              <li>
+                Definição de categoria e descrição estratégica
+              </li>
 
-  border-top: 2px solid var(--primary);
+              <li>
+                Otimização para buscas locais
+              </li>
 
-  border-radius: 0 0 20px 20px;
+              <li>
+                Organização de serviços e informações
+              </li>
 
-  background: var(--light);
+              <li>
+                Orientações para fotos e conteúdos
+              </li>
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
+              <li>
+                Estratégias para melhorar a visibilidade local
+              </li>
 
-.process-item:hover {
-  transform: translateY(-4px);
+              <li>
+                Acompanhamento e ajustes
+              </li>
 
-  box-shadow:
-    0 18px 40px rgba(67, 38, 201, 0.07);
-}
+            </ul>
 
-.process-item > span {
-  display: block;
 
-  margin-bottom: 28px;
+            <a
+              href="https://wa.me/5511947859304?text=Olá!%20Tenho%20interesse%20no%20serviço%20de%20Presença%20Digital%20Local%20a%20partir%20de%20R%24399%2Fmês."
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener"
+            >
+              Solicitar orçamento
+            </a>
 
-  font-size: 12px;
-  font-weight: 850;
 
-  letter-spacing: 0.08em;
+          </article>
 
-  color: var(--primary);
-}
 
-.process-item h3 {
-  margin-bottom: 10px;
+        </div>
 
-  font-size: 18px;
+      </div>
 
-  color: var(--dark);
-}
+    </section>
 
-.process-item p {
-  font-size: 14px;
 
-  line-height: 1.7;
+    <!-- ===================================================
+         FAQ
+         =================================================== -->
 
-  color: var(--text);
-}
+    <section class="section faq-section">
 
+      <div class="container">
 
-/* =========================================================
-   INVESTIMENTOS / PLANOS
-========================================================= */
 
-.plans-grid {
-  display: grid;
+        <div class="section-heading center reveal">
 
-  grid-template-columns: repeat(3, 1fr);
+          <span class="eyebrow">
+            FAQ
+          </span>
 
-  align-items: stretch;
+          <h2>
+            Perguntas frequentes.
+          </h2>
 
-  gap: 20px;
-}
+        </div>
 
-.plan {
-  position: relative;
 
-  display: flex;
-  flex-direction: column;
+        <div class="faq">
 
-  padding: 32px;
 
-  border: 1px solid rgba(91, 51, 245, 0.10);
+          <details class="reveal">
 
-  border-radius: 26px;
+            <summary>
 
-  background: var(--white);
+              <span>
+                O investimento em anúncios está incluso?
+              </span>
 
-  box-shadow:
-    0 15px 50px rgba(67, 38, 201, 0.05);
+              <span>
+                +
+              </span>
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
+            </summary>
 
-.plan:hover {
-  transform: translateY(-4px);
 
-  box-shadow:
-    0 22px 55px rgba(67, 38, 201, 0.08);
-}
+            <p>
+              Não. O valor da gestão corresponde aos serviços contratados.
+              O investimento em mídia é pago diretamente às plataformas
+              de anúncios.
+            </p>
 
-.plan.featured {
-  border-color: rgba(91, 51, 245, 0.35);
+          </details>
 
-  box-shadow:
-    0 22px 60px rgba(91, 51, 245, 0.13);
-}
 
-.plan-badge {
-  position: absolute;
+          <details class="reveal">
 
-  top: 18px;
-  right: 18px;
+            <summary>
 
-  padding: 6px 10px;
+              <span>
+                Quanto preciso investir em anúncios?
+              </span>
 
-  border-radius: 999px;
+              <span>
+                +
+              </span>
 
-  background: rgba(91, 51, 245, 0.09);
+            </summary>
 
-  font-size: 10px;
-  font-weight: 850;
 
-  letter-spacing: 0.06em;
+            <p>
+              O valor depende do objetivo, segmento, região, concorrência
+              e planejamento. A recomendação é feita de acordo com o
+              cenário de cada empresa.
+            </p>
 
-  text-transform: uppercase;
+          </details>
 
-  color: var(--primary);
-}
 
-.plan-header {
-  margin-bottom: 5px;
-}
+          <details class="reveal">
 
-.plan-name {
-  display: block;
+            <summary>
 
-  padding-right: 85px;
+              <span>
+                Em quanto tempo aparecem os resultados?
+              </span>
 
-  font-size: 17px;
-  font-weight: 850;
+              <span>
+                +
+              </span>
 
-  line-height: 1.35;
+            </summary>
 
-  color: var(--dark);
-}
 
-.plan-header h3 {
-  margin-top: 18px;
+            <p>
+              Não existe um prazo único. Os resultados dependem de fatores
+              como oferta, orçamento, concorrência, segmento e qualidade
+              das ações. O acompanhamento permite realizar ajustes
+              conforme os dados.
+            </p>
 
-  font-size: 31px;
-  font-weight: 900;
+          </details>
 
-  line-height: 1.1;
 
-  letter-spacing: -0.04em;
+          <details class="reveal">
 
-  color: var(--dark);
-}
+            <summary>
 
-.plan-header h3 small {
-  display: inline-block;
+              <span>
+                A Jhe Tecnologia atende diferentes segmentos?
+              </span>
 
-  margin-left: 3px;
+              <span>
+                +
+              </span>
 
-  font-size: 11px;
-  font-weight: 700;
+            </summary>
 
-  line-height: 1.3;
 
-  letter-spacing: 0;
+            <p>
+              Sim. As soluções são adaptadas aos objetivos, público
+              e características de cada negócio.
+            </p>
 
-  color: var(--muted);
-}
+          </details>
 
-.plan-header p {
-  min-height: 66px;
 
-  margin-top: 12px;
+          <details class="reveal">
 
-  font-size: 13px;
+            <summary>
 
-  line-height: 1.6;
+              <span>
+                Como funciona o acompanhamento?
+              </span>
 
-  color: var(--text);
-}
+              <span>
+                +
+              </span>
 
-.plan ul {
-  display: grid;
+            </summary>
 
-  gap: 11px;
 
-  margin: 24px 0 30px;
+            <p>
+              As ações são acompanhadas por meio de métricas e indicadores,
+              permitindo identificar oportunidades, testar alternativas
+              e realizar ajustes ao longo do trabalho.
+            </p>
 
-  flex: 1;
-}
+          </details>
 
-.plan li {
-  position: relative;
 
-  padding-left: 24px;
+          <details class="reveal">
 
-  font-size: 13px;
+            <summary>
 
-  line-height: 1.55;
+              <span>
+                Os criativos estão incluídos?
+              </span>
 
-  color: var(--text);
-}
+              <span>
+                +
+              </span>
 
-.plan li::before {
-  content: "✓";
+            </summary>
 
-  position: absolute;
 
-  left: 0;
-  top: 0;
+            <p>
+              Sim, quando previstos no escopo contratado. A quantidade
+              de criativos varia de acordo com o serviço ou plano escolhido.
+            </p>
 
-  font-weight: 900;
+          </details>
 
-  color: var(--secondary);
-}
 
-.plan .btn {
-  width: 100%;
-}
+        </div>
 
+      </div>
 
-/* =========================================================
-   FAQ
-========================================================= */
+    </section>
 
-.faq {
-  max-width: 900px;
 
-  margin: 0 auto;
-}
+    <!-- ===================================================
+         SEO / POSICIONAMENTO
+         =================================================== -->
 
-.faq details {
-  border-bottom: 1px solid rgba(91, 51, 245, 0.12);
-}
+    <section class="seo-section">
 
-.faq summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+      <div class="container">
 
-  gap: 20px;
 
-  padding: 23px 0;
+        <div class="seo-box reveal">
 
-  cursor: pointer;
+          <span class="eyebrow">
+            MARKETING DIGITAL PARA EMPRESAS
+          </span>
 
-  list-style: none;
 
-  font-size: 16px;
-  font-weight: 800;
+          <h2>
+            Marketing Digital com estratégia e execução.
+          </h2>
 
-  color: var(--dark);
-}
 
-.faq summary::-webkit-details-marker {
-  display: none;
-}
+          <p>
+            A Jhe Tecnologia atua com Marketing Digital, Tráfego Pago,
+            Presença Digital Local e Criação de Sites, desenvolvendo
+            soluções de acordo com os objetivos e necessidades de cada empresa.
+          </p>
 
-.faq summary::marker {
-  display: none;
-}
+        </div>
 
-.faq summary span:last-child {
-  flex-shrink: 0;
+      </div>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    </section>
 
-  width: 28px;
-  height: 28px;
 
-  border-radius: 50%;
+    <!-- ===================================================
+         CTA
+         =================================================== -->
 
-  background: rgba(91, 51, 245, 0.07);
+    <section
+      class="cta"
+      id="contato"
+    >
 
-  font-size: 20px;
-  font-weight: 400;
+      <div class="container cta-content">
 
-  line-height: 1;
 
-  color: var(--primary);
+        <div class="reveal">
 
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
-}
+          <span class="eyebrow">
+            VAMOS CONVERSAR?
+          </span>
 
-.faq details[open] summary span:last-child {
-  transform: rotate(45deg);
 
-  background: rgba(91, 51, 245, 0.12);
-}
+          <h2>
+            Vamos entender o que sua empresa precisa.
+          </h2>
 
-.faq details p {
-  max-width: 820px;
 
-  padding: 0 50px 23px 0;
+          <p>
+            Conte um pouco sobre o seu negócio e seus objetivos.
+            A partir disso, podemos identificar quais soluções fazem
+            mais sentido para o seu momento.
+          </p>
 
-  font-size: 14px;
+        </div>
 
-  line-height: 1.75;
 
-  color: var(--text);
-}
+        <a
+          href="https://wa.me/5511947859304?text=Olá!%20Gostaria%20de%20conversar%20sobre%20Marketing%20Digital%20para%20minha%20empresa."
+          class="btn btn-white reveal"
+          target="_blank"
+          rel="noopener"
+        >
+          Falar pelo WhatsApp
+        </a>
 
 
-/* =========================================================
-   SEO / POSICIONAMENTO
-========================================================= */
+      </div>
 
-.seo-section {
-  padding: 90px 0;
+    </section>
 
-  background:
-    linear-gradient(
-      135deg,
-      rgba(91, 51, 245, 0.06),
-      rgba(36, 186, 239, 0.05)
-    );
-}
 
-.seo-box {
-  max-width: 850px;
+  </main>
 
-  margin: 0 auto;
 
-  text-align: center;
-}
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
 
-.seo-box .eyebrow {
-  justify-content: center;
-}
+  <footer class="footer">
 
-.seo-box h2 {
-  font-size: clamp(30px, 4vw, 46px);
+    <div class="container">
 
-  line-height: 1.1;
 
-  letter-spacing: -0.035em;
+      <div class="footer-grid">
 
-  color: var(--dark);
-}
 
-.seo-box p {
-  max-width: 720px;
+        <!-- MARCA -->
 
-  margin: 18px auto 0;
+        <div class="footer-brand">
 
-  font-size: 16px;
 
-  line-height: 1.8;
+          <a
+            href="#inicio"
+            class="logo"
+            aria-label="Jhe Tecnologia - Início"
+          >
 
-  color: var(--text);
-}
+            <img
+              src="Logo.png"
+              alt="Jhe Tecnologia"
+              class="logo-image"
+            >
 
+          </a>
 
-/* =========================================================
-   CTA
-========================================================= */
 
-.cta {
-  position: relative;
+          <p>
+            Marketing Digital para empresas com estratégia,
+            performance e tecnologia.
+          </p>
 
-  padding: 95px 0;
 
-  overflow: hidden;
+        </div>
 
-  background:
-    radial-gradient(
-      circle at 15% 85%,
-      rgba(36, 186, 239, 0.10),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      var(--primary-dark),
-      var(--primary)
-    );
 
-  color: var(--white);
-}
+        <!-- SERVIÇOS -->
 
-.cta::before {
-  content: "";
+        <div class="footer-column">
 
-  position: absolute;
+          <h3>
+            Serviços
+          </h3>
 
-  width: 430px;
-  height: 430px;
 
-  top: -230px;
-  right: -120px;
+          <a href="#servicos">
+            Estratégia de Marketing
+          </a>
 
-  border: 1px solid rgba(255, 255, 255, 0.12);
+          <a href="#servicos">
+            Tráfego Pago
+          </a>
 
-  border-radius: 50%;
+          <a href="#servicos">
+            Presença Digital Local
+          </a>
 
-  pointer-events: none;
-}
+          <a href="#servicos">
+            Criação de Sites
+          </a>
 
-.cta::after {
-  content: "";
+        </div>
 
-  position: absolute;
 
-  width: 220px;
-  height: 220px;
+        <!-- EMPRESA -->
 
-  bottom: -140px;
-  left: -70px;
+        <div class="footer-column">
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+          <h3>
+            Empresa
+          </h3>
 
-  border-radius: 50%;
 
-  pointer-events: none;
-}
+          <a href="#sobre">
+            Sobre
+          </a>
 
-.cta-content {
-  position: relative;
-  z-index: 1;
+          <a href="#diferenciais">
+            Diferenciais
+          </a>
 
-  max-width: 800px;
+          <a href="#investimentos">
+            Investimentos
+          </a>
 
-  margin: 0 auto;
+          <a href="#contato">
+            Contato
+          </a>
 
-  text-align: center;
-}
+        </div>
 
-.cta-content .eyebrow {
-  color: var(--secondary);
-}
 
-.cta-content .eyebrow::before {
-  background: var(--white);
-}
+        <!-- CONTATO -->
 
-.cta-content h2 {
-  font-size: clamp(34px, 4vw, 52px);
+        <div class="footer-column">
 
-  line-height: 1.08;
+          <h3>
+            Contato
+          </h3>
 
-  letter-spacing: -0.04em;
 
-  color: var(--white);
-}
+          <a
+            href="https://wa.me/5511947859304"
+            target="_blank"
+            rel="noopener"
+          >
+            (11) 94785-9304
+          </a>
 
-.cta-content p {
-  max-width: 650px;
 
-  margin: 18px auto 0;
+          <a href="mailto:contatojessica.tecnologia@gmail.com">
+            contatojessica.tecnologia@gmail.com
+          </a>
 
-  font-size: 16px;
 
-  line-height: 1.75;
+        </div>
 
-  color: rgba(255, 255, 255, 0.76);
-}
 
-.cta-content > .btn {
-  margin-top: 30px;
-}
+      </div>
 
 
-/* =========================================================
-   FOOTER
-========================================================= */
+      <div class="footer-bottom">
 
-.footer {
-  padding: 55px 0 25px;
+        <span>
+          © 2026 Jhe Tecnologia. Todos os direitos reservados.
+        </span>
 
-  background: #100D1D;
 
-  color: var(--white);
-}
+        <a href="#inicio">
+          Voltar ao início
+        </a>
 
-.footer-grid {
-  display: grid;
+      </div>
 
-  grid-template-columns:
-    1.3fr
-    0.8fr
-    0.8fr
-    1fr;
 
-  gap: 45px;
+    </div>
 
-  padding-bottom: 45px;
+  </footer>
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
 
-.footer-brand .logo {
-  margin-bottom: 18px;
-}
+  <!-- =====================================================
+       WHATSAPP FLUTUANTE
+       ===================================================== -->
 
-.footer-brand .logo-image {
-  width: 145px;
-}
+  <a
+    href="https://wa.me/5511947859304"
+    class="whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Falar com a Jhe Tecnologia pelo WhatsApp"
+  >
 
-.footer-brand p {
-  max-width: 390px;
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+      focusable="false"
+    >
 
-  font-size: 13px;
+      <path d="M19.11 17.23c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.14-.42-2.17-1.34-.8-.71-1.34-1.59-1.5-1.86-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.18-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.64 1.11 2.82c.14.18 1.93 2.95 4.68 4.14.65.28 1.16.45 1.55.11.52-.08 1.6-.66 1.83-1.29.23-.63.23-1.17.16-1.29-.07-.11-.25-.18-.52-.32zM16.03 27.2h-.01a11.14 11.14 0 0 1-5.68-1.55l-.41-.24-4.22 1.11 1.13-4.11-.27-.42a11.16 11.16 0 1 1 9.46 5.21zm0-20.16a8.99 8.99 0 0 0-7.63 13.7l.38.61-.67 2.45 2.51-.66.59.35a8.98 8.98 0 1 0 4.82-16.45z"/>
 
-  line-height: 1.7;
+    </svg>
 
-  color: rgba(255, 255, 255, 0.58);
-}
+  </a>
 
-.footer-column {
-  display: flex;
-  flex-direction: column;
 
-  align-items: flex-start;
-}
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
 
-.footer-column h3 {
-  margin-bottom: 16px;
+  <script src="script.js"></script>
 
-  font-size: 13px;
-  font-weight: 850;
 
-  text-transform: uppercase;
+</body>
 
-  letter-spacing: 0.08em;
-
-  color: var(--white);
-}
-
-.footer-column a {
-  display: inline-block;
-
-  margin-bottom: 10px;
-
-  font-size: 13px;
-
-  line-height: 1.5;
-
-  color: rgba(255, 255, 255, 0.58);
-
-  transition: color 0.25s ease;
-}
-
-.footer-column a:hover {
-  color: var(--secondary);
-}
-
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 20px;
-
-  padding-top: 22px;
-
-  font-size: 11px;
-
-  color: rgba(255, 255, 255, 0.42);
-}
-
-.footer-bottom a {
-  transition: color 0.25s ease;
-}
-
-.footer-bottom a:hover {
-  color: var(--secondary);
-}
-
-
-/* =========================================================
-   WHATSAPP FLUTUANTE
-========================================================= */
-
-.whatsapp {
-  position: fixed;
-
-  right: 22px;
-  bottom: 22px;
-
-  width: 58px;
-  height: 58px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0;
-  margin: 0;
-
-  border-radius: 50%;
-
-  background: #25D366;
-
-  color: #FFFFFF;
-
-  z-index: 99999;
-
-  box-shadow:
-    0 12px 30px rgba(37, 211, 102, 0.30);
-
-  text-decoration: none;
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.whatsapp:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 16px 35px rgba(37, 211, 102, 0.38);
-}
-
-.whatsapp svg {
-  display: block;
-
-  width: 28px;
-  height: 28px;
-
-  flex-shrink: 0;
-
-  fill: currentColor;
-}
-
-
-/* =========================================================
-   REVEAL
-   Conteúdo sempre visível.
-========================================================= */
-
-.reveal {
-  opacity: 1;
-  visibility: visible;
-
-  transform: none;
-
-  transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
-    visibility 0.6s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  visibility: visible;
-
-  transform: none;
-}
-
-
-/* =========================================================
-   RESPONSIVO
-========================================================= */
-
-@media (max-width: 1100px) {
-
-  .hero-grid {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .hero-content {
-    max-width: 820px;
-  }
-
-  .hero-visual {
-    max-width: 760px;
-
-    margin: 0 auto;
-  }
-
-  .services-grid,
-  .features {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .process {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .split {
-    grid-template-columns: 1fr;
-
-    gap: 50px;
-  }
-
-  .about-content {
-    max-width: 800px;
-  }
-
-  .about-highlights {
-    max-width: 800px;
-  }
-
-  .plans-grid {
-    grid-template-columns: 1fr;
-
-    max-width: 650px;
-
-    margin: 0 auto;
-  }
-
-  .footer-grid {
-    grid-template-columns:
-      1.2fr
-      1fr
-      1fr;
-  }
-
-  .footer-grid .footer-column:last-child {
-    grid-column: 2 / 4;
-  }
-}
-
-
-/* =========================================================
-   TABLET / MOBILE
-========================================================= */
-
-@media (max-width: 800px) {
-
-  .container {
-    width: min(calc(100% - 30px), var(--container));
-  }
-
-  .header-content {
-    min-height: 70px;
-  }
-
-  .logo-image {
-    width: 130px;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav {
-    position: absolute;
-
-    top: 70px;
-    left: 15px;
-    right: 15px;
-
-    display: none;
-
-    flex-direction: column;
-    align-items: stretch;
-
-    gap: 0;
-
-    padding: 10px;
-
-    border: 1px solid rgba(91, 51, 245, 0.10);
-
-    border-radius: 18px;
-
-    background: var(--white);
-
-    box-shadow:
-      0 20px 50px rgba(67, 38, 201, 0.12);
-  }
-
-  .nav.active {
-    display: flex;
-  }
-
-  .nav a {
-    padding: 13px 12px;
-
-    border-radius: 10px;
-  }
-
-  .nav a:hover {
-    background: var(--light);
-  }
-
-  .nav a::after {
-    display: none;
-  }
-
-  .hero {
-    min-height: auto;
-
-    padding: 120px 0 70px;
-  }
-
-  .hero h1 {
-    font-size: clamp(38px, 10vw, 56px);
-  }
-
-  .hero-content > p {
-    font-size: 16px;
-  }
-
-  .hero-buttons {
-    align-items: stretch;
-  }
-
-  .section {
-    padding: 75px 0;
-  }
-
-  .section-heading {
-    margin-bottom: 35px;
-  }
-
-  .section-heading h2 {
-    font-size: clamp(30px, 8vw, 42px);
-  }
-
-  .pain-grid,
-  .services-grid,
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .metrics {
-    grid-template-columns: 1fr;
-  }
-
-  .metric {
-    display: grid;
-
-    grid-template-columns: 1fr auto;
-
-    column-gap: 15px;
-    row-gap: 2px;
-
-    align-items: center;
-  }
-
-  .metric > span {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .metric > strong {
-    grid-column: 2;
-    grid-row: 1 / 3;
-  }
-
-  .metric > small {
-    grid-column: 1;
-    grid-row: 2;
-
-    margin-top: 0;
-  }
-
-  .about-highlights {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-
-    gap: 35px;
-  }
-
-  .footer-grid .footer-column:last-child {
-    grid-column: auto;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-}
-
-
-/* =========================================================
-   MOBILE PEQUENO
-========================================================= */
-
-@media (max-width: 560px) {
-
-  .container {
-    width: min(calc(100% - 28px), var(--container));
-  }
-
-  .hero {
-    padding-top: 110px;
-  }
-
-  .hero h1 {
-    font-size: clamp(36px, 11vw, 50px);
-
-    letter-spacing: -0.04em;
-  }
-
-  .hero-content > p {
-    margin-top: 20px;
-
-    font-size: 15px;
-
-    line-height: 1.7;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-
-    align-items: stretch;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-  }
-
-  .hero-trust {
-    gap: 7px;
-  }
-
-  .hero-trust span {
-    padding: 7px 10px;
-
-    font-size: 10px;
-  }
-
-  .dashboard {
-    padding: 18px;
-
-    border-radius: 22px;
-  }
-
-  .dashboard-top strong {
-    font-size: 16px;
-  }
-
-  .metric > strong {
-    font-size: 21px;
-  }
-
-  .chart {
-    height: 125px;
-  }
-
-  .dashboard-footer {
-    font-size: 9px;
-  }
-
-  .service-card {
-    min-height: 315px;
-
-    padding: 25px;
-  }
-
-  .pain-card,
-  .feature,
-  .process-item {
-    padding: 25px;
-  }
-
-  .about-highlights {
-    grid-template-columns: 1fr;
-  }
-
-  .highlight {
-    min-height: 125px;
-  }
-
-  .plan {
-    padding: 26px;
-  }
-
-  .plan-name {
-    padding-right: 70px;
-
-    font-size: 15px;
-  }
-
-  .plan-header h3 {
-    font-size: 29px;
-  }
-
-  .plan-header h3 small {
-    display: block;
-
-    margin: 5px 0 0;
-  }
-
-  .plan-header p {
-    min-height: auto;
-  }
-
-  .faq summary {
-    font-size: 14px;
-  }
-
-  .faq details p {
-    padding-right: 15px;
-
-    font-size: 13px;
-  }
-
-  .seo-section {
-    padding: 70px 0;
-  }
-
-  .cta {
-    padding: 75px 0;
-  }
-
-  .cta-content h2 {
-    font-size: clamp(32px, 9vw, 44px);
-  }
-
-  .cta-content p {
-    font-size: 15px;
-  }
-
-  .footer {
-    padding-top: 45px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-
-    gap: 30px;
-  }
-
-  .footer-grid .footer-column:last-child {
-    grid-column: auto;
-  }
-
-  .whatsapp {
-    right: 16px;
-    bottom: 16px;
-
-    width: 54px;
-    height: 54px;
-  }
-
-  .whatsapp svg {
-    width: 26px;
-    height: 26px;
-  }
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
+</html>
+```
