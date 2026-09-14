@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* =========================
+  /* =========================================================
      MENU MOBILE
-  ========================= */
+  ========================================================= */
 
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
@@ -30,9 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleMenu();
     });
 
-
-    /* Fecha ao clicar em um link */
-
     const navLinks = nav.querySelectorAll("a");
 
     navLinks.forEach((link) => {
@@ -40,9 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         closeMenu();
       });
     });
-
-
-    /* Fecha ao clicar fora do menu */
 
     document.addEventListener("click", (event) => {
 
@@ -56,10 +50,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!clickedInsideNav && !clickedMenuButton) {
         closeMenu();
       }
+
     });
-
-
-    /* Fecha com ESC */
 
     document.addEventListener("keydown", (event) => {
 
@@ -68,9 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     });
-
-
-    /* Fecha o menu quando volta para desktop */
 
     window.addEventListener("resize", () => {
 
@@ -83,9 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  /* =========================
+  /* =========================================================
      REVEAL
-  ========================= */
+  ========================================================= */
 
   const revealElements = document.querySelectorAll(".reveal");
 
@@ -100,15 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 
-  /* =========================
+  /* =========================================================
      NÚMEROS ANIMADOS
-  ========================= */
+  ========================================================= */
 
   const counters = document.querySelectorAll(".counter");
 
   const animateCounter = (counter) => {
 
-    if (counter.dataset.animated === "true") {
+    if (!counter || counter.dataset.animated === "true") {
       return;
     }
 
@@ -126,11 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const duration = 1400;
     const startTime = performance.now();
 
-
     const updateCounter = (currentTime) => {
 
+      const elapsed = currentTime - startTime;
+
       const progress = Math.min(
-        (currentTime - startTime) / duration,
+        elapsed / duration,
         1
       );
 
@@ -143,7 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       counter.textContent =
         `${prefix}${currentValue}${suffix}`;
-
 
       if (progress < 1) {
 
@@ -158,20 +147,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-
     requestAnimationFrame(updateCounter);
 
   };
 
 
-  /* =========================
-     INTERSECTION OBSERVER
-  ========================= */
+  /* =========================================================
+     INICIAR CONTADORES
+  ========================================================= */
 
-  if ("IntersectionObserver" in window) {
+  if (counters.length) {
 
-    const counterObserver =
-      new IntersectionObserver(
+    /*
+      Tenta iniciar quando os números entram
+      na área visível da tela.
+    */
+
+    if ("IntersectionObserver" in window) {
+
+      const counterObserver = new IntersectionObserver(
         (entries, observer) => {
 
           entries.forEach((entry) => {
@@ -188,20 +182,40 @@ document.addEventListener("DOMContentLoaded", () => {
 
         },
         {
-          threshold: 0.5
+          threshold: 0.2
         }
       );
 
+      counters.forEach((counter) => {
+        counterObserver.observe(counter);
+      });
 
-    counters.forEach((counter) => {
-      counterObserver.observe(counter);
-    });
+    } else {
 
-  } else {
+      counters.forEach((counter) => {
+        animateCounter(counter);
+      });
 
-    counters.forEach((counter) => {
-      animateCounter(counter);
-    });
+    }
+
+    /*
+      Segurança extra:
+      se o navegador não disparar o IntersectionObserver
+      corretamente, os números são iniciados após um pequeno
+      intervalo.
+    */
+
+    setTimeout(() => {
+
+      counters.forEach((counter) => {
+
+        if (counter.dataset.animated !== "true") {
+          animateCounter(counter);
+        }
+
+      });
+
+    }, 800);
 
   }
 
