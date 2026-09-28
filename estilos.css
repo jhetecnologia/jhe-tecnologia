@@ -732,18 +732,6 @@ section {
   background: var(--light);
 }
 
-/*
-   Desktop:
-   3 cards na primeira linha
-   + 1 card sozinho no canto esquerdo da segunda linha.
-
-   Ordem visual:
-   1. Presença Digital Local
-   2. Tráfego Pago
-   3. Estratégia de Marketing
-   4. Criação de Sites
-*/
-
 .plans-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -769,7 +757,7 @@ section {
 }
 
 
-/* Ordem visual dos cards */
+/* Ordem visual */
 
 .plan:nth-child(3) {
   order: 1;
@@ -892,24 +880,48 @@ section {
 }
 
 .faq-item {
-  padding: 23px 0;
-  border-bottom: 1px solid var(--border);
+  margin-bottom: 14px;
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  background: var(--white);
+
+  box-shadow: 0 10px 30px rgba(33, 27, 56, 0.045);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
-.faq-item:first-child {
-  border-top: 1px solid var(--border);
+.faq-item:hover {
+  border-color: rgba(91, 51, 245, 0.18);
+  box-shadow: 0 14px 35px rgba(33, 27, 56, 0.07);
 }
 
 .faq-item summary {
   position: relative;
-  padding-right: 35px;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 70px;
+
+  padding: 21px 58px 21px 24px;
 
   list-style: none;
   cursor: pointer;
 
   color: var(--dark);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease;
 }
 
 .faq-item summary::-webkit-details-marker {
@@ -920,21 +932,54 @@ section {
   content: "+";
 
   position: absolute;
-  right: 0;
-  top: -4px;
+  right: 20px;
+  top: 50%;
 
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  border-radius: 50%;
+
+  background: var(--light-2);
   color: var(--primary);
-  font-size: 25px;
+
+  font-size: 20px;
   font-weight: 400;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
+}
+
+.faq-item summary:hover {
+  color: var(--primary);
+  background: rgba(91, 51, 245, 0.025);
+}
+
+.faq-item[open] {
+  border-color: rgba(91, 51, 245, 0.22);
+}
+
+.faq-item[open] summary {
+  color: var(--primary);
 }
 
 .faq-item[open] summary::after {
   content: "−";
+  background: var(--primary);
+  color: var(--white);
 }
 
 .faq-item p {
   max-width: 800px;
-  padding-top: 14px;
+
+  padding: 0 24px 24px;
 
   color: var(--muted);
   font-size: 14px;
@@ -943,14 +988,23 @@ section {
 
 
 /* =========================================================
-   SEO
+   BLOCO MARKETING DIGITAL
    ========================================================= */
+
+.seo-section {
+  padding: 100px 0;
+  background: var(--white);
+}
 
 .seo-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 60px;
   align-items: center;
+}
+
+.seo-content {
+  max-width: 680px;
 }
 
 .seo-content h2 {
@@ -973,15 +1027,29 @@ section {
 }
 
 .seo-point {
-  padding: 18px 20px;
+  padding: 20px;
+
   border-radius: 17px;
+
   background: var(--light);
   border: 1px solid var(--border);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.seo-point:hover {
+  transform: translateY(-2px);
+  border-color: rgba(91, 51, 245, 0.18);
+  box-shadow: 0 12px 28px rgba(33, 27, 56, 0.05);
 }
 
 .seo-point strong {
   display: block;
   margin-bottom: 4px;
+
   color: var(--dark);
   font-size: 14px;
 }
@@ -998,21 +1066,94 @@ section {
 
 .cta {
   padding: 90px 0;
+
   background:
-    radial-gradient(circle at 20% 20%, rgba(36, 186, 239, 0.18), transparent 30%),
-    radial-gradient(circle at 80% 80%, rgba(91, 51, 245, 0.22), transparent 32%),
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(36, 186, 239, 0.18),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(91, 51, 245, 0.22),
+      transparent 32%
+    ),
     var(--dark);
+
   color: var(--white);
 }
 
 .cta-box {
+  position: relative;
+
   max-width: 850px;
+
   margin: 0 auto;
+  padding: 60px 55px;
+
   text-align: center;
+
+  border-radius: var(--radius);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(91, 51, 245, 0.95),
+      rgba(67, 38, 201, 0.95)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.10);
+
+  box-shadow:
+    0 25px 60px rgba(21, 18, 37, 0.22);
+
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  top: -150px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cta-box::after {
+  content: "";
+
+  position: absolute;
+
+  width: 200px;
+  height: 200px;
+
+  bottom: -150px;
+  left: -60px;
+
+  border-radius: 50%;
+
+  background: rgba(36, 186, 239, 0.10);
+}
+
+.cta-box h2,
+.cta-box p,
+.cta-box .btn {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-box h2 {
   margin-bottom: 18px;
+
+  color: var(--white);
+
   font-size: clamp(34px, 5vw, 52px);
   line-height: 1.08;
   letter-spacing: -0.04em;
@@ -1020,9 +1161,13 @@ section {
 
 .cta-box p {
   max-width: 650px;
+
   margin: 0 auto 30px;
-  color: rgba(255, 255, 255, 0.62);
+
+  color: rgba(255, 255, 255, 0.78);
+
   font-size: 16px;
+  line-height: 1.75;
 }
 
 .cta .btn-primary {
@@ -1040,39 +1185,81 @@ section {
    ========================================================= */
 
 .footer {
-  padding: 45px 0;
+  padding: 70px 0 25px;
+
   background: #100d1c;
+
   color: rgba(255, 255, 255, 0.58);
 }
 
-.footer-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 30px;
+.footer-grid {
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    1fr
+    1fr
+    1.2fr;
+
+  gap: 45px;
+
+  padding-bottom: 45px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.footer-logo img {
+.footer-brand .logo {
+  display: inline-flex;
+  margin-bottom: 18px;
+}
+
+.footer-brand .logo-image {
   width: 135px;
+  height: auto;
 }
 
-.footer p {
-  font-size: 11px;
+.footer-brand p {
+  max-width: 280px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.52);
+
+  font-size: 13px;
+  line-height: 1.7;
 }
 
-.footer-links {
+.footer-column {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 11px;
 }
 
-.footer-links a {
-  font-size: 11px;
-  transition: color 0.25s ease;
-}
+.footer-column h3 {
+  margin: 0 0 8px;
 
-.footer-links a:hover {
   color: var(--white);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.footer-column a {
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 13px;
+  line-height: 1.5;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-column a:hover {
+  color: var(--white);
+  transform: translateX(2px);
 }
 
 
@@ -1083,51 +1270,94 @@ section {
 .social-links {
   display: flex;
   align-items: center;
+
   gap: 10px;
-  margin-top: 18px;
+
+  margin-top: 12px;
 }
 
 .social-links a {
   width: 38px;
   height: 38px;
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 10px;
+  border-radius: 11px;
 
-  color: var(--white);
-  font-size: 15px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: rgba(255, 255, 255, 0.70);
 
   transition:
-    transform 0.25s ease,
+    color 0.25s ease,
     background 0.25s ease,
-    border-color 0.25s ease,
-    color 0.25s ease;
+    transform 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .social-links a:hover {
-  transform: translateY(-2px);
-  background: var(--primary);
-  border-color: var(--primary);
   color: var(--white);
+
+  background: rgba(91, 51, 245, 0.28);
+  border-color: rgba(91, 51, 245, 0.45);
+
+  transform: translateY(-2px);
 }
 
-.social-links i {
-  line-height: 1;
+.social-links svg {
+  width: 18px;
+  height: 18px;
+
+  display: block;
+
+  fill: currentColor;
 }
 
 
 /* =========================================================
-   WHATSAPP
+   RODAPÉ INFERIOR
+   ========================================================= */
+
+.footer-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  padding-top: 22px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 11px;
+}
+
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.48);
+
+  transition: color 0.25s ease;
+}
+
+.footer-bottom a:hover {
+  color: var(--white);
+}
+
+
+/* =========================================================
+   WHATSAPP FLUTUANTE
+   NÃO ALTERAR VISUAL
    ========================================================= */
 
 .whatsapp {
   position: fixed;
+
   right: 22px;
   bottom: 22px;
+
   z-index: 900;
 
   width: 58px;
@@ -1142,7 +1372,8 @@ section {
   background: #25D366;
   color: var(--white);
 
-  box-shadow: 0 14px 30px rgba(37, 211, 102, 0.28);
+  box-shadow:
+    0 14px 30px rgba(37, 211, 102, 0.28);
 
   transition:
     transform 0.25s ease,
@@ -1151,15 +1382,10 @@ section {
 
 .whatsapp:hover {
   transform: translateY(-4px);
-  box-shadow: 0 18px 35px rgba(37, 211, 102, 0.35);
+
+  box-shadow:
+    0 18px 35px rgba(37, 211, 102, 0.35);
 }
-
-
-/*
-   O HTML usa SVG, não <i>.
-   Por isso o tamanho e o preenchimento precisam
-   ser definidos diretamente aqui.
-*/
 
 .whatsapp svg {
   width: 30px;
@@ -1177,7 +1403,9 @@ section {
 
 .reveal {
   opacity: 0;
+
   transform: translateY(22px);
+
   transition:
     opacity 0.7s ease,
     transform 0.7s ease;
@@ -1208,6 +1436,7 @@ section {
   .plans-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
 }
 
 
@@ -1227,20 +1456,26 @@ section {
 
   .nav {
     position: absolute;
+
     top: 72px;
     left: 20px;
     right: 20px;
 
     display: none;
+
     flex-direction: column;
     align-items: stretch;
+
     gap: 0;
 
     padding: 10px;
 
     border-radius: 18px;
+
     background: var(--white);
+
     border: 1px solid var(--border);
+
     box-shadow: var(--shadow);
   }
 
@@ -1289,7 +1524,9 @@ section {
 
   .plans-grid {
     grid-template-columns: 1fr;
+
     max-width: 650px;
+
     margin-left: auto;
     margin-right: auto;
   }
@@ -1298,6 +1535,12 @@ section {
   .plan-header p {
     min-height: auto;
   }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+
 }
 
 
@@ -1392,24 +1635,122 @@ section {
     font-size: 29px;
   }
 
-  .footer-content {
-    flex-direction: column;
-    align-items: flex-start;
+
+  /* FAQ */
+
+  .faq-item {
+    margin-bottom: 10px;
+    border-radius: 15px;
+  }
+
+  .faq-item summary {
+    min-height: 64px;
+
+    padding: 19px 54px 19px 19px;
+
+    font-size: 14px;
+  }
+
+  .faq-item summary::after {
+    right: 16px;
+
+    width: 28px;
+    height: 28px;
+
+    font-size: 18px;
+  }
+
+  .faq-item p {
+    padding: 0 19px 20px;
+
+    font-size: 13px;
+  }
+
+
+  /* Marketing */
+
+  .seo-section {
+    padding: 70px 0;
+  }
+
+  .seo-grid {
+    gap: 30px;
+  }
+
+  .seo-content h2 {
+    font-size: 32px;
+  }
+
+  .seo-content p {
+    font-size: 14px;
+  }
+
+  .seo-point {
+    padding: 17px;
+  }
+
+
+  /* CTA */
+
+  .cta {
+    padding: 70px 0;
+  }
+
+  .cta-box {
+    padding: 42px 24px;
+
+    border-radius: 22px;
+  }
+
+  .cta-box h2 {
+    font-size: 34px;
+  }
+
+  .cta-box p {
+    font-size: 14px;
+  }
+
+
+  /* Footer */
+
+  .footer {
+    padding: 55px 0 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    padding-bottom: 35px;
+  }
+
+  .footer-brand p {
+    max-width: 320px;
   }
 
   .social-links {
-    margin-top: 16px;
+    margin-top: 14px;
   }
 
   .social-links a {
     width: 36px;
     height: 36px;
-    font-size: 14px;
   }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding-top: 18px;
+  }
+
+
+  /* WhatsApp */
 
   .whatsapp {
     width: 54px;
     height: 54px;
+
     right: 16px;
     bottom: 16px;
   }
@@ -1418,4 +1759,5 @@ section {
     width: 28px;
     height: 28px;
   }
+
 }
