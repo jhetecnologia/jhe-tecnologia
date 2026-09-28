@@ -733,20 +733,18 @@ section {
 }
 
 /*
-   3 cards na primeira linha + 1 centralizado na segunda.
-   O quarto card ocupa a mesma largura dos demais.
+   3 cards na primeira linha
+   + 1 card no canto esquerdo da segunda linha.
 */
 
 .plans-grid {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
   align-items: stretch;
 }
 
 .plan {
-  grid-column: span 2;
-
   min-width: 0;
   padding: 32px 24px;
 
@@ -766,10 +764,6 @@ section {
 .plan:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow);
-}
-
-.plan:nth-child(4) {
-  grid-column: 3 / span 2;
 }
 
 .plan.featured {
@@ -1129,20 +1123,8 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /*
-     2 cards por linha em telas menores.
-     Mantém o quarto card dentro da grade normalmente.
-  */
   .plans-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .plan {
-    grid-column: auto;
-  }
-
-  .plan:nth-child(4) {
-    grid-column: auto;
   }
 }
 
@@ -1228,14 +1210,6 @@ section {
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
-  }
-
-  .plan {
-    grid-column: auto;
-  }
-
-  .plan:nth-child(4) {
-    grid-column: auto;
   }
 
   .plan-name,
