@@ -733,8 +733,15 @@ section {
 }
 
 /*
+   Desktop:
    3 cards na primeira linha
-   + 1 card no canto esquerdo da segunda linha.
+   + 1 card sozinho no canto esquerdo da segunda linha.
+
+   Ordem visual:
+   1. Presença Digital Local
+   2. Tráfego Pago
+   3. Estratégia de Marketing
+   4. Criação de Sites
 */
 
 .plans-grid {
@@ -759,6 +766,23 @@ section {
     transform 0.25s ease,
     box-shadow 0.25s ease,
     border-color 0.25s ease;
+}
+
+/* Ordem visual dos cards */
+.plan:nth-child(3) {
+  order: 1;
+}
+
+.plan:nth-child(2) {
+  order: 2;
+}
+
+.plan:nth-child(1) {
+  order: 3;
+}
+
+.plan:nth-child(4) {
+  order: 4;
 }
 
 .plan:hover {
