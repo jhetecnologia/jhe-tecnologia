@@ -573,6 +573,7 @@ section {
   line-height: 1.7;
 }
 
+
 /* Botão dos serviços */
 
 .service-card .btn {
@@ -766,14 +767,26 @@ section {
   background: var(--light);
 }
 
+
+/*
+   5 planos:
+   3 na primeira linha
+   2 centralizados na segunda linha
+*/
+
 .plans-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 18px;
   align-items: stretch;
 }
 
+
+/* Cada plano ocupa 2 colunas */
+
 .plan {
+  grid-column: span 2;
+
   min-width: 0;
   padding: 32px 24px;
 
@@ -791,9 +804,13 @@ section {
 }
 
 
-/* Ordem visual */
+/* =========================================================
+   POSIÇÃO DOS 5 PLANOS
+   ========================================================= */
 
-.plan:nth-child(3) {
+/* Primeira linha */
+
+.plan:nth-child(1) {
   order: 1;
 }
 
@@ -801,31 +818,55 @@ section {
   order: 2;
 }
 
-.plan:nth-child(1) {
+.plan:nth-child(3) {
   order: 3;
 }
 
+
+/* Segunda linha centralizada */
+
 .plan:nth-child(4) {
   order: 4;
+  grid-column: 2 / span 2;
 }
+
+.plan:nth-child(5) {
+  order: 5;
+  grid-column: 4 / span 2;
+}
+
+
+/* =========================================================
+   HOVER DOS PLANOS
+   ========================================================= */
 
 .plan:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow);
 }
 
+
+/* =========================================================
+   PLANO DESTAQUE
+   ========================================================= */
+
 .plan.featured {
   position: relative;
+
   border-color: var(--primary);
-  box-shadow: 0 18px 45px rgba(91, 51, 245, 0.12);
+
+  box-shadow:
+    0 18px 45px rgba(91, 51, 245, 0.12);
 }
 
 .plan-badge {
   position: absolute;
+
   top: 18px;
   right: 18px;
 
   padding: 6px 9px;
+
   border-radius: 999px;
 
   background: var(--primary);
@@ -836,6 +877,11 @@ section {
   letter-spacing: 0.04em;
 }
 
+
+/* =========================================================
+   CABEÇALHO DOS PLANOS
+   ========================================================= */
+
 .plan-header {
   margin-bottom: 25px;
 }
@@ -845,6 +891,7 @@ section {
   margin-bottom: 13px;
 
   color: var(--dark);
+
   font-size: 18px;
   line-height: 1.25;
   font-weight: 800;
@@ -852,9 +899,12 @@ section {
 
 .plan h3 {
   margin-bottom: 8px;
+
   color: var(--primary);
+
   font-size: 31px;
   line-height: 1;
+
   letter-spacing: -0.035em;
 }
 
@@ -862,23 +912,34 @@ section {
   min-height: 92px;
 
   color: var(--muted);
+
   font-size: 11px;
   line-height: 1.6;
 }
 
+
+/* =========================================================
+   LISTA DOS PLANOS
+   ========================================================= */
+
 .plan-list {
   list-style: none;
+
   display: grid;
   gap: 11px;
+
   margin-bottom: 28px;
+
   flex: 1;
 }
 
 .plan li {
   position: relative;
+
   padding-left: 20px;
 
   color: var(--text);
+
   font-size: 12px;
   line-height: 1.55;
 }
@@ -887,17 +948,25 @@ section {
   content: "✓";
 
   position: absolute;
+
   left: 0;
   top: 0;
 
   color: var(--primary);
+
   font-size: 12px;
   font-weight: 800;
 }
 
+
+/* =========================================================
+   BOTÃO DOS PLANOS
+   ========================================================= */
+
 .plan .btn {
   width: 100%;
   min-height: 49px;
+
   margin-top: auto;
 
   font-size: 13px;
@@ -956,6 +1025,7 @@ section {
   cursor: pointer;
 
   color: var(--dark);
+
   font-size: 15px;
   font-weight: 700;
 
@@ -972,6 +1042,7 @@ section {
   content: "+";
 
   position: absolute;
+
   right: 20px;
   top: 50%;
 
@@ -1017,6 +1088,7 @@ section {
 
 .faq-item[open] summary::after {
   content: "−";
+
   background: var(--primary);
   color: var(--white);
 }
@@ -1029,6 +1101,7 @@ section {
   padding: 0 26px 26px;
 
   color: var(--muted);
+
   font-size: 14px;
   line-height: 1.8;
 }
@@ -1051,8 +1124,11 @@ section {
 
 .seo-grid {
   display: grid;
+
   grid-template-columns: 1.05fr 0.95fr;
+
   gap: 60px;
+
   align-items: center;
 }
 
@@ -1073,15 +1149,21 @@ section {
 
 .seo-content h2 {
   margin-bottom: 18px;
+
   color: var(--dark);
+
   font-size: clamp(32px, 4vw, 46px);
+
   line-height: 1.08;
+
   letter-spacing: -0.035em;
 }
 
 .seo-content p {
   color: var(--muted);
+
   font-size: 15px;
+
   line-height: 1.8;
 }
 
@@ -1096,6 +1178,7 @@ section {
   border-radius: 18px;
 
   background: var(--white);
+
   border: 1px solid var(--border);
 
   box-shadow:
@@ -1118,15 +1201,19 @@ section {
 
 .seo-point strong {
   display: block;
+
   margin-bottom: 5px;
 
   color: var(--dark);
+
   font-size: 14px;
 }
 
 .seo-point span {
   color: var(--muted);
+
   font-size: 12px;
+
   line-height: 1.6;
 }
 
@@ -1160,6 +1247,7 @@ section {
   max-width: 900px;
 
   margin: 0 auto;
+
   padding: 70px 60px;
 
   text-align: center;
@@ -1237,7 +1325,9 @@ section {
   color: var(--white);
 
   font-size: clamp(34px, 5vw, 52px);
+
   line-height: 1.08;
+
   letter-spacing: -0.04em;
 }
 
@@ -1249,6 +1339,7 @@ section {
   color: rgba(255, 255, 255, 0.80);
 
   font-size: 16px;
+
   line-height: 1.75;
 }
 
@@ -1256,6 +1347,7 @@ section {
   min-width: 190px;
 
   background: var(--white);
+
   color: var(--primary);
 
   box-shadow:
@@ -1264,6 +1356,7 @@ section {
 
 .cta .btn-primary:hover {
   background: var(--light);
+
   color: var(--primary-dark);
 
   box-shadow:
@@ -1317,12 +1410,15 @@ section {
   color: rgba(255, 255, 255, 0.52);
 
   font-size: 13px;
+
   line-height: 1.7;
 }
 
 .footer-column {
   display: flex;
+
   flex-direction: column;
+
   align-items: flex-start;
 
   gap: 11px;
@@ -1334,6 +1430,7 @@ section {
   color: var(--white);
 
   font-size: 13px;
+
   font-weight: 700;
 }
 
@@ -1341,6 +1438,7 @@ section {
   color: rgba(255, 255, 255, 0.55);
 
   font-size: 13px;
+
   line-height: 1.5;
 
   transition:
@@ -1350,6 +1448,7 @@ section {
 
 .footer-column a:hover {
   color: var(--white);
+
   transform: translateX(2px);
 }
 
@@ -1360,6 +1459,7 @@ section {
 
 .social-links {
   display: flex;
+
   align-items: center;
 
   gap: 10px;
@@ -1372,12 +1472,14 @@ section {
   height: 38px;
 
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
   border-radius: 11px;
 
   background: rgba(255, 255, 255, 0.06);
+
   border: 1px solid rgba(255, 255, 255, 0.08);
 
   color: rgba(255, 255, 255, 0.70);
@@ -1393,6 +1495,7 @@ section {
   color: var(--white);
 
   background: rgba(91, 51, 245, 0.28);
+
   border-color: rgba(91, 51, 245, 0.45);
 
   transform: translateY(-2px);
@@ -1455,12 +1558,14 @@ section {
   height: 58px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
 
   background: #25D366;
+
   color: var(--white);
 
   box-shadow:
@@ -1504,6 +1609,7 @@ section {
 
 .reveal.visible {
   opacity: 1;
+
   transform: translateY(0);
 }
 
@@ -1528,6 +1634,16 @@ section {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /*
+     Remove o posicionamento especial dos últimos
+     planos quando a grade passa para 2 colunas.
+  */
+
+  .plan:nth-child(4),
+  .plan:nth-child(5) {
+    grid-column: span 1;
+  }
+
 }
 
 
@@ -1549,12 +1665,14 @@ section {
     position: absolute;
 
     top: 72px;
+
     left: 20px;
     right: 20px;
 
     display: none;
 
     flex-direction: column;
+
     align-items: stretch;
 
     gap: 0;
@@ -1576,6 +1694,7 @@ section {
 
   .nav a {
     padding: 13px 14px;
+
     border-radius: 10px;
   }
 
@@ -1610,6 +1729,7 @@ section {
   .about-grid,
   .seo-grid {
     grid-template-columns: 1fr;
+
     gap: 40px;
   }
 
@@ -1626,6 +1746,10 @@ section {
     margin-right: auto;
   }
 
+  .plan {
+    grid-column: auto !important;
+  }
+
   .plan-name,
   .plan-header p {
     min-height: auto;
@@ -1633,6 +1757,7 @@ section {
 
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
+
     gap: 35px;
   }
 
@@ -1679,11 +1804,13 @@ section {
 
   .hero-trust span {
     font-size: 10px;
+
     padding: 7px 10px;
   }
 
   .dashboard {
     padding: 18px;
+
     border-radius: 22px;
   }
 
@@ -1719,6 +1846,7 @@ section {
 
   .about-box {
     min-height: 260px;
+
     padding: 30px;
   }
 
@@ -1735,10 +1863,13 @@ section {
   }
 
 
-  /* FAQ */
+  /* =====================================================
+     FAQ
+     ===================================================== */
 
   .faq-item {
     margin-bottom: 11px;
+
     border-radius: 16px;
   }
 
@@ -1766,7 +1897,9 @@ section {
   }
 
 
-  /* Marketing */
+  /* =====================================================
+     MARKETING
+     ===================================================== */
 
   .seo-section {
     padding: 70px 0;
@@ -1778,6 +1911,7 @@ section {
 
   .seo-content {
     padding: 28px 22px;
+
     border-radius: 22px;
   }
 
@@ -1794,7 +1928,9 @@ section {
   }
 
 
-  /* CTA */
+  /* =====================================================
+     CTA
+     ===================================================== */
 
   .cta {
     padding: 70px 0;
@@ -1819,7 +1955,9 @@ section {
   }
 
 
-  /* Footer */
+  /* =====================================================
+     FOOTER
+     ===================================================== */
 
   .footer {
     padding: 55px 0 20px;
@@ -1827,6 +1965,7 @@ section {
 
   .footer-grid {
     grid-template-columns: 1fr;
+
     gap: 32px;
 
     padding-bottom: 35px;
@@ -1847,13 +1986,16 @@ section {
 
   .footer-bottom {
     flex-direction: column;
+
     align-items: flex-start;
 
     padding-top: 18px;
   }
 
 
-  /* WhatsApp */
+  /* =====================================================
+     WHATSAPP
+     ===================================================== */
 
   .whatsapp {
     width: 54px;
