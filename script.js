@@ -1,4 +1,10 @@
+/* =========================================================
+   JHE TECNOLOGIA
+   JAVASCRIPT PRINCIPAL
+   ========================================================= */
+
 document.addEventListener("DOMContentLoaded", () => {
+
 
   /* =========================================================
      MENU MOBILE
@@ -12,31 +18,56 @@ document.addEventListener("DOMContentLoaded", () => {
     menuToggle.setAttribute("aria-expanded", "false");
 
     const closeMenu = () => {
+
       nav.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
     };
 
+
     const toggleMenu = () => {
-      const isOpen = nav.classList.toggle("active");
+
+      const isOpen =
+        nav.classList.toggle("active");
 
       menuToggle.setAttribute(
         "aria-expanded",
         String(isOpen)
       );
+
     };
 
+
     menuToggle.addEventListener("click", (event) => {
+
       event.stopPropagation();
+
       toggleMenu();
+
     });
 
-    const navLinks = nav.querySelectorAll("a");
+
+    /* Fecha o menu ao clicar em um link */
+
+    const navLinks =
+      nav.querySelectorAll("a");
 
     navLinks.forEach((link) => {
+
       link.addEventListener("click", () => {
+
         closeMenu();
+
       });
+
     });
+
+
+    /* Fecha ao clicar fora */
 
     document.addEventListener("click", (event) => {
 
@@ -44,27 +75,45 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      const clickedInsideNav = nav.contains(event.target);
-      const clickedMenuButton = menuToggle.contains(event.target);
+      const clickedInsideNav =
+        nav.contains(event.target);
 
-      if (!clickedInsideNav && !clickedMenuButton) {
+      const clickedMenuButton =
+        menuToggle.contains(event.target);
+
+      if (
+        !clickedInsideNav &&
+        !clickedMenuButton
+      ) {
+
         closeMenu();
+
       }
 
     });
+
+
+    /* Fecha com ESC */
 
     document.addEventListener("keydown", (event) => {
 
       if (event.key === "Escape") {
+
         closeMenu();
+
       }
 
     });
 
+
+    /* Fecha ao voltar para desktop */
+
     window.addEventListener("resize", () => {
 
       if (window.innerWidth > 900) {
+
         closeMenu();
+
       }
 
     });
@@ -76,147 +125,89 @@ document.addEventListener("DOMContentLoaded", () => {
      REVEAL
   ========================================================= */
 
-  const revealElements = document.querySelectorAll(".reveal");
-
-  revealElements.forEach((element) => {
-
-    element.classList.add("visible");
-
-    element.style.opacity = "1";
-    element.style.visibility = "visible";
-    element.style.transform = "none";
-
-  });
+  const revealElements =
+    document.querySelectorAll(".reveal");
 
 
-  /* =========================================================
-     NÚMEROS ANIMADOS
-  ========================================================= */
-
-  const counters = document.querySelectorAll(".counter");
-
-  const animateCounter = (counter) => {
-
-    if (!counter || counter.dataset.animated === "true") {
-      return;
-    }
-
-    const target = Number(counter.dataset.target);
-
-    const prefix = counter.dataset.prefix || "";
-    const suffix = counter.dataset.suffix || "";
-
-    if (!Number.isFinite(target)) {
-      return;
-    }
-
-    counter.dataset.animated = "true";
-
-    const duration = 1400;
-    const startTime = performance.now();
-
-    const updateCounter = (currentTime) => {
-
-      const elapsed = currentTime - startTime;
-
-      const progress = Math.min(
-        elapsed / duration,
-        1
-      );
-
-      const easedProgress =
-        1 - Math.pow(1 - progress, 3);
-
-      const currentValue = Math.round(
-        target * easedProgress
-      );
-
-      counter.textContent =
-        `${prefix}${currentValue}${suffix}`;
-
-      if (progress < 1) {
-
-        requestAnimationFrame(updateCounter);
-
-      } else {
-
-        counter.textContent =
-          `${prefix}${target}${suffix}`;
-
-      }
-
-    };
-
-    requestAnimationFrame(updateCounter);
-
-  };
-
-
-  /* =========================================================
-     INICIAR CONTADORES
-  ========================================================= */
-
-  if (counters.length) {
+  if (revealElements.length) {
 
     /*
-      Tenta iniciar quando os números entram
-      na área visível da tela.
+      Caso exista suporte ao IntersectionObserver,
+      os elementos aparecem conforme entram na tela.
     */
 
     if ("IntersectionObserver" in window) {
 
-      const counterObserver = new IntersectionObserver(
-        (entries, observer) => {
+      const revealObserver =
+        new IntersectionObserver(
+          (entries, observer) => {
 
-          entries.forEach((entry) => {
+            entries.forEach((entry) => {
 
-            if (!entry.isIntersecting) {
-              return;
-            }
+              if (!entry.isIntersecting) {
+                return;
+              }
 
-            animateCounter(entry.target);
+              entry.target.classList.add("visible");
 
-            observer.unobserve(entry.target);
+              observer.unobserve(
+                entry.target
+              );
 
-          });
+            });
 
-        },
-        {
-          threshold: 0.2
-        }
-      );
+          },
+          {
+            threshold: 0.12
+          }
+        );
 
-      counters.forEach((counter) => {
-        counterObserver.observe(counter);
+
+      revealElements.forEach((element) => {
+
+        revealObserver.observe(element);
+
       });
 
     } else {
 
-      counters.forEach((counter) => {
-        animateCounter(counter);
+      /*
+        Fallback para navegadores sem
+        IntersectionObserver.
+      */
+
+      revealElements.forEach((element) => {
+
+        element.classList.add("visible");
+
       });
 
     }
 
-    /*
-      Segurança extra:
-      se o navegador não disparar o IntersectionObserver
-      corretamente, os números são iniciados após um pequeno
-      intervalo.
-    */
+  }
 
-    setTimeout(() => {
 
-      counters.forEach((counter) => {
+  /* =========================================================
+     ACESSIBILIDADE DO MENU
+  ========================================================= */
 
-        if (counter.dataset.animated !== "true") {
-          animateCounter(counter);
+  if (menuToggle) {
+
+    menuToggle.addEventListener(
+      "keydown",
+      (event) => {
+
+        if (event.key === "Enter" ||
+            event.key === " ") {
+
+          event.preventDefault();
+
         }
 
-      });
-
-    }, 800);
+      }
+    );
 
   }
+
 
 });
