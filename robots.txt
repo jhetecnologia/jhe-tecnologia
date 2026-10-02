@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.jhetecnologia.com.br/sitemap.xml
