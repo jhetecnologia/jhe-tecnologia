@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      MENU MOBILE
-  ========================================================= */
+     ========================================================= */
 
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".nav");
@@ -41,6 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
+
+    /* Abre e fecha o menu */
 
     menuToggle.addEventListener("click", (event) => {
 
@@ -106,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* Fecha ao voltar para desktop */
+    /* Fecha o menu ao voltar para desktop */
 
     window.addEventListener("resize", () => {
 
@@ -123,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      REVEAL
-  ========================================================= */
+     ========================================================= */
 
   const revealElements =
     document.querySelectorAll(".reveal");
@@ -132,8 +134,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (revealElements.length) {
 
     /*
-      Caso exista suporte ao IntersectionObserver,
-      os elementos aparecem conforme entram na tela.
+      Elementos aparecem suavemente
+      conforme entram na tela.
     */
 
     if ("IntersectionObserver" in window) {
@@ -185,29 +187,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   }
-
-
-  /* =========================================================
-     ACESSIBILIDADE DO MENU
-  ========================================================= */
-
-  if (menuToggle) {
-
-    menuToggle.addEventListener(
-      "keydown",
-      (event) => {
-
-        if (event.key === "Enter" ||
-            event.key === " ") {
-
-          event.preventDefault();
-
-        }
-
-      }
-    );
-
-  }
-
 
 });
