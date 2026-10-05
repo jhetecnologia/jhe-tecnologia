@@ -1,10 +1,9 @@
-javascript
 /* =========================================================
    JHE TECNOLOGIA
    JAVASCRIPT PRINCIPAL
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =========================================================
@@ -18,53 +17,33 @@ document.addEventListener("DOMContentLoaded", () => {
 
     menuToggle.setAttribute("aria-expanded", "false");
 
-    const closeMenu = () => {
-
+    function closeMenu() {
       nav.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
 
-      menuToggle.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-    };
-
-
-    const toggleMenu = () => {
-
-      const isOpen =
-        nav.classList.toggle("active");
-
-      menuToggle.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
-
-    };
-
-
-    /* Abre e fecha o menu */
-
-    menuToggle.addEventListener("click", (event) => {
+    menuToggle.addEventListener("click", function (event) {
 
       event.stopPropagation();
 
-      toggleMenu();
+      const isOpen = nav.classList.toggle("active");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        isOpen ? "true" : "false"
+      );
 
     });
 
 
-    /* Fecha o menu ao clicar em um link */
+    /* Fecha ao clicar em um link */
 
-    const navLinks =
-      nav.querySelectorAll("a");
+    const navLinks = nav.querySelectorAll("a");
 
-    navLinks.forEach((link) => {
+    navLinks.forEach(function (link) {
 
-      link.addEventListener("click", () => {
-
+      link.addEventListener("click", function () {
         closeMenu();
-
       });
 
     });
@@ -72,25 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Fecha ao clicar fora */
 
-    document.addEventListener("click", (event) => {
+    document.addEventListener("click", function (event) {
 
       if (!nav.classList.contains("active")) {
         return;
       }
 
-      const clickedInsideNav =
-        nav.contains(event.target);
-
-      const clickedMenuButton =
-        menuToggle.contains(event.target);
-
       if (
-        !clickedInsideNav &&
-        !clickedMenuButton
+        !nav.contains(event.target) &&
+        !menuToggle.contains(event.target)
       ) {
-
         closeMenu();
-
       }
 
     });
@@ -98,25 +69,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* Fecha com ESC */
 
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", function (event) {
 
       if (event.key === "Escape") {
-
         closeMenu();
-
       }
 
     });
 
 
-    /* Fecha o menu ao voltar para desktop */
+    /* Fecha ao voltar para desktop */
 
-    window.addEventListener("resize", () => {
+    window.addEventListener("resize", function () {
 
       if (window.innerWidth > 900) {
-
         closeMenu();
-
       }
 
     });
@@ -132,41 +99,31 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".reveal");
 
 
-  if (revealElements.length) {
-
-    /*
-      Elementos aparecem suavemente
-      conforme entram na tela.
-    */
+  if (revealElements.length > 0) {
 
     if ("IntersectionObserver" in window) {
 
       const revealObserver =
-        new IntersectionObserver(
-          (entries, observer) => {
+        new IntersectionObserver(function (entries, observer) {
 
-            entries.forEach((entry) => {
+          entries.forEach(function (entry) {
 
-              if (!entry.isIntersecting) {
-                return;
-              }
+            if (!entry.isIntersecting) {
+              return;
+            }
 
-              entry.target.classList.add("visible");
+            entry.target.classList.add("visible");
 
-              observer.unobserve(
-                entry.target
-              );
+            observer.unobserve(entry.target);
 
-            });
+          });
 
-          },
-          {
-            threshold: 0.12
-          }
-        );
+        }, {
+          threshold: 0.12
+        });
 
 
-      revealElements.forEach((element) => {
+      revealElements.forEach(function (element) {
 
         revealObserver.observe(element);
 
@@ -174,12 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     } else {
 
-      /*
-        Fallback para navegadores sem
-        IntersectionObserver.
-      */
-
-      revealElements.forEach((element) => {
+      revealElements.forEach(function (element) {
 
         element.classList.add("visible");
 
@@ -200,25 +152,23 @@ document.addEventListener("DOMContentLoaded", () => {
   );
 
 
-  whatsappLinks.forEach((link) => {
+  whatsappLinks.forEach(function (link) {
 
-    link.addEventListener("click", () => {
+    link.addEventListener("click", function () {
 
-      if (typeof gtag !== "function") {
-        return;
+      if (typeof window.gtag === "function") {
+
+        window.gtag(
+          "event",
+          "conversion",
+          {
+            "send_to": "AW-17945711429/nFK4CLqxq-scEMWml-1C",
+            "value": 1.0,
+            "currency": "BRL"
+          }
+        );
+
       }
-
-
-      gtag("event", "conversion", {
-
-        send_to:
-          "AW-17945711429/nFK4CLqxq-scEMWml-1C",
-
-        value: 1.0,
-
-        currency: "BRL"
-
-      });
 
     });
 
