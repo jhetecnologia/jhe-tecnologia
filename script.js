@@ -1,3 +1,4 @@
+```javascript
 /* =========================================================
    JHE TECNOLOGIA
    JAVASCRIPT PRINCIPAL
@@ -187,5 +188,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   }
+
+
+  /* =========================================================
+     GOOGLE ADS
+     CONVERSÃO DE CLIQUE NO WHATSAPP
+     ========================================================= */
+
+  const whatsappLinks = document.querySelectorAll(
+    'a[href*="wa.me"], a[href*="api.whatsapp.com"]'
+  );
+
+
+  whatsappLinks.forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+      if (typeof gtag !== "function") {
+        return;
+      }
+
+
+      gtag("event", "conversion", {
+
+        send_to:
+          "AW-17945711429/nFK4CLqxq-scEMWml-1C",
+
+        value: 1.0,
+
+        currency: "BRL"
+
+      });
+
+    });
+
+  });
+
 
 });
