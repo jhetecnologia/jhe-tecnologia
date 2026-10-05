@@ -1,4 +1,4 @@
-```javascript
+javascript
 /* =========================================================
    JHE TECNOLOGIA
    JAVASCRIPT PRINCIPAL
