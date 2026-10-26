@@ -140,6 +140,31 @@
         rel="stylesheet"
         href="estilos.css"
     >
+    <style>
+        /* Grade de investimentos: 3 cards por linha no desktop */
+        .investments .plans-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            align-items: stretch;
+            gap: 24px;
+        }
+        .investments .plans-grid > .plan {
+            min-width: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        @media (max-width: 900px) {
+            .investments .plans-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
+        @media (max-width: 600px) {
+            .investments .plans-grid {
+                grid-template-columns: minmax(0, 1fr) !important;
+            }
+        }
+    </style>
+
 
 
     <!-- =====================================================
@@ -1216,8 +1241,68 @@
                     </article>
 
 
+                    <article class="plan reveal">
 
-                    <!-- PLANO 2 -->
+                        <div class="plan-header">
+
+                            <div class="plan-name">
+                                Tráfego Pago
+                            </div>
+
+                            <h3>
+                                R$ 699
+                            </h3>
+
+                            <span class="plan-period">
+                                Mensal
+                            </span>
+
+                            <p>
+                                Gestão de campanhas em uma plataforma,
+                                Google Ads ou Meta Ads, com acompanhamento
+                                e otimizações de desempenho.
+                            </p>
+
+                        </div>
+
+
+                        <ul class="plan-list">
+
+                            <li>
+                                Gestão de Google Ads ou Meta Ads
+                            </li>
+
+                            <li>
+                                Planejamento estratégico
+                            </li>
+
+                            <li>
+                                Otimizações contínuas
+                            </li>
+
+                            <li>
+                                Análise de performance
+                            </li>
+
+                            <li>
+                                Testes de anúncios
+                            </li>
+
+
+                        </ul>
+
+
+                        <a
+                            href="https://wa.me/5511947859304?text=Ol%C3%A1!%20Tenho%20interesse%20na%20gest%C3%A3o%20de%20Google%20Ads%20ou%20Meta%20Ads%20por%20R%24%20699%20mensais."
+                            class="btn btn-primary"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Quero este plano
+                        </a>
+
+                    </article>
+
 
                     <article class="plan reveal">
 
@@ -1290,75 +1375,6 @@
                     </article>
 
 
-
-                    <!-- PLANO 3 -->
-
-                    <article class="plan reveal">
-
-                        <div class="plan-header">
-
-                            <div class="plan-name">
-                                Tráfego Pago
-                            </div>
-
-                            <h3>
-                                R$ 699
-                            </h3>
-
-                            <span class="plan-period">
-                                Mensal
-                            </span>
-
-                            <p>
-                                Gestão de campanhas em uma plataforma,
-                                Google Ads ou Meta Ads, com acompanhamento
-                                e otimizações de desempenho.
-                            </p>
-
-                        </div>
-
-
-                        <ul class="plan-list">
-
-                            <li>
-                                Gestão de Google Ads ou Meta Ads
-                            </li>
-
-                            <li>
-                                Planejamento estratégico
-                            </li>
-
-                            <li>
-                                Otimizações contínuas
-                            </li>
-
-                            <li>
-                                Análise de performance
-                            </li>
-
-                            <li>
-                                Testes de anúncios
-                            </li>
-
-
-                        </ul>
-
-
-                        <a
-                            href="https://wa.me/5511947859304?text=Ol%C3%A1!%20Tenho%20interesse%20na%20gest%C3%A3o%20de%20Google%20Ads%20ou%20Meta%20Ads%20por%20R%24%20699%20mensais."
-                            class="btn btn-primary"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Quero este plano
-                        </a>
-
-                    </article>
-
-
-
-                    <!-- PLANO 4: GOOGLE ADS + META ADS -->
-
                     <article class="plan reveal">
 
                         <div class="plan-header">
@@ -1409,8 +1425,83 @@
                     </article>
 
 
+                    <article class="plan reveal">
 
-                    <!-- PLANO 5: ESTRATÉGIA + TRÁFEGO PAGO -->
+                        <div class="plan-header">
+
+                            <div class="plan-name">
+                                Criação de Sites
+                            </div>
+
+                            <span class="plan-period">
+                                A PARTIR DE
+                            </span>
+
+                            <h3>
+                                R$ 1.500
+                            </h3>
+
+                            <span class="plan-period">
+                                Por projeto
+                            </span>
+
+                            <p>
+                                Sites institucionais e landing pages
+                                estruturados para apresentar a empresa,
+                                apoiar campanhas e gerar oportunidades.
+                            </p>
+
+                        </div>
+
+
+                        <ul class="plan-list">
+
+                            <li>
+                                Site institucional
+                            </li>
+
+                            <li>
+                                Landing pages
+                            </li>
+
+                            <li>
+                                Design responsivo
+                            </li>
+
+                            <li>
+                                Integração com WhatsApp
+                            </li>
+
+                            <li>
+                                Estrutura otimizada para SEO básico
+                            </li>
+
+                            <li>
+                                Google Analytics
+                            </li>
+
+                            <li>
+                                Configuração do Google Search Console
+                            </li>
+
+                            <li>
+                                Estrutura preparada para anúncios
+                            </li>
+
+                        </ul>
+
+
+                        <a
+                            href="https://wa.me/5511947859304?text=Olá!%20Tenho%20interesse%20em%20Criação%20de%20Sites%20a%20partir%20de%20R%24%201.500."
+                            class="btn btn-primary"
+                            target="_blank"
+                            rel="noopener"
+                        >
+                            Solicitar orçamento
+                        </a>
+
+                    </article>
+
 
                     <article class="plan featured reveal">
 
@@ -1486,87 +1577,6 @@
                             rel="noopener"
                         >
                             Quero este plano
-                        </a>
-
-                    </article>
-
-
-
-                    <!-- PLANO 6: CRIAÇÃO DE SITES -->
-
-                    <article class="plan reveal">
-
-                        <div class="plan-header">
-
-                            <div class="plan-name">
-                                Criação de Sites
-                            </div>
-
-                            <span class="plan-period">
-                                A PARTIR DE
-                            </span>
-
-                            <h3>
-                                R$ 1.500
-                            </h3>
-
-                            <span class="plan-period">
-                                Por projeto
-                            </span>
-
-                            <p>
-                                Sites institucionais e landing pages
-                                estruturados para apresentar a empresa,
-                                apoiar campanhas e gerar oportunidades.
-                            </p>
-
-                        </div>
-
-
-                        <ul class="plan-list">
-
-                            <li>
-                                Site institucional
-                            </li>
-
-                            <li>
-                                Landing pages
-                            </li>
-
-                            <li>
-                                Design responsivo
-                            </li>
-
-                            <li>
-                                Integração com WhatsApp
-                            </li>
-
-                            <li>
-                                Estrutura otimizada para SEO básico
-                            </li>
-
-                            <li>
-                                Google Analytics
-                            </li>
-
-                            <li>
-                                Configuração do Google Search Console
-                            </li>
-
-                            <li>
-                                Estrutura preparada para anúncios
-                            </li>
-
-                        </ul>
-
-
-                        <a
-                            href="https://wa.me/5511947859304?text=Olá!%20Tenho%20interesse%20em%20Criação%20de%20Sites%20a%20partir%20de%20R%24%201.500."
-                            class="btn btn-primary"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Solicitar orçamento
                         </a>
 
                     </article>
