@@ -141,25 +141,44 @@
         href="estilos.css"
     >
     <style>
-        /* Grade de investimentos: 3 cards por linha no desktop */
-        .investments .plans-grid {
+        /* Grade de investimentos: 3 colunas no desktop, 2 no tablet e 1 no celular.
+           Estas regras ficam no próprio HTML para prevalecer sobre estilos antigos. */
+        html body #investimentos .container > .plans-grid {
             display: grid !important;
             grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-            align-items: stretch;
-            gap: 24px;
+            grid-auto-flow: row !important;
+            grid-auto-columns: auto !important;
+            justify-content: stretch !important;
+            align-items: stretch !important;
+            gap: 24px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            margin-inline: 0 !important;
         }
-        .investments .plans-grid > .plan {
-            min-width: 0;
-            width: 100%;
-            box-sizing: border-box;
+        html body #investimentos .container > .plans-grid > .plan,
+        html body #investimentos .container > .plans-grid > .plan.featured {
+            grid-column: auto !important;
+            grid-row: auto !important;
+            justify-self: stretch !important;
+            align-self: stretch !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: none !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            display: flex !important;
+            flex-direction: column !important;
+        }
+        html body #investimentos .container > .plans-grid > .plan .btn {
+            margin-top: auto !important;
         }
         @media (max-width: 900px) {
-            .investments .plans-grid {
+            html body #investimentos .container > .plans-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             }
         }
         @media (max-width: 600px) {
-            .investments .plans-grid {
+            html body #investimentos .container > .plans-grid {
                 grid-template-columns: minmax(0, 1fr) !important;
             }
         }
