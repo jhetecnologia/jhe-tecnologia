@@ -1,8 +1,12 @@
+
 /* =========================================================
+   JHE TECNOLOGIA
    JAVASCRIPT PRINCIPAL
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    "use strict";
 
     /* =====================================================
        MENU MOBILE
@@ -12,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const nav = document.querySelector(".nav");
 
     if (menuToggle && nav) {
-
-        menuToggle.setAttribute("aria-expanded", "false");
 
         if (menuToggle.tagName === "BUTTON") {
             menuToggle.setAttribute("type", "button");
@@ -38,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
             menuToggle.setAttribute("aria-expanded", "true");
             menuToggle.setAttribute("aria-label", "Fechar menu");
         }
+
+        closeMenu();
 
         menuToggle.addEventListener("click", function (event) {
             event.stopPropagation();
@@ -66,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.addEventListener("keydown", function (event) {
             if (event.key === "Escape") {
                 closeMenu();
+                menuToggle.focus();
             }
         });
 
@@ -83,14 +88,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const revealElements = document.querySelectorAll(".reveal");
 
+    const reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
     if (
         revealElements.length > 0 &&
         "IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        !reduceMotion
     ) {
+
         const revealObserver = new IntersectionObserver(
             function (entries, observer) {
+
                 entries.forEach(function (entry) {
+
                     if (!entry.isIntersecting) {
                         return;
                     }
@@ -98,6 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     entry.target.classList.add("visible");
                     observer.unobserve(entry.target);
                 });
+
             },
             {
                 threshold: 0.12
@@ -107,7 +120,9 @@ document.addEventListener("DOMContentLoaded", function () {
         revealElements.forEach(function (element) {
             revealObserver.observe(element);
         });
+
     } else {
+
         revealElements.forEach(function (element) {
             element.classList.add("visible");
         });
@@ -132,38 +147,74 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             /*
-             * Evita registrar duas vezes a conversão
-             * para o mesmo clique neste manipulador.
+             * Evita registrar a mesma conversão mais de uma vez
+             * enquanto o primeiro clique está sendo processado.
              */
             if (link.dataset.conversionPending === "true") {
+                event.preventDefault();
                 return;
             }
+
+            /*
+             * Para links em nova aba ou cliques modificados,
+             * registra a conversão sem interferir na navegação
+             * padrão do navegador.
+             */
+            const modifiedClick =
+                event.ctrlKey ||
+                event.metaKey ||
+                event.shiftKey ||
+                event.altKey ||
+                event.button !== 0;
+
+            const opensNewTab =
+                link.target === "_blank" ||
+                modifiedClick;
+
+            if (opensNewTab) {
+
+                try {
+                    window.gtag("event", "conversion", {
+                        send_to: "AW-17945711429/nFK4CLqxq-scEMWml-1C",
+                        value: 1.0,
+                        currency: "BRL"
+                    });
+                } catch (error) {
+                    // A navegação padrão deve continuar funcionando.
+                }
+
+                return;
+            }
+
+            /*
+             * Para a navegação na mesma aba, aguarda a tentativa
+             * de envio da conversão e garante um redirecionamento
+             * alternativo caso o callback não seja executado.
+             */
+            event.preventDefault();
 
             link.dataset.conversionPending = "true";
 
             let navigationStarted = false;
+            let fallbackTimer;
 
             function navigateToWhatsApp() {
+
                 if (navigationStarted) {
                     return;
                 }
 
                 navigationStarted = true;
+
+                window.clearTimeout(fallbackTimer);
+
                 link.dataset.conversionPending = "false";
 
-                if (event.ctrlKey || event.metaKey || event.shiftKey ||
-                    event.altKey || link.target === "_blank") {
-                    window.open(link.href, "_blank", "noopener");
-                } else {
-                    window.location.href = link.href;
-                }
+                window.location.href = link.href;
             }
 
-            /*
-             * O callback permite que a tag tente enviar
-             * a conversão antes do redirecionamento.
-             */
             try {
+
                 window.gtag("event", "conversion", {
                     send_to: "AW-17945711429/nFK4CLqxq-scEMWml-1C",
                     value: 1.0,
@@ -172,14 +223,14 @@ document.addEventListener("DOMContentLoaded", function () {
                     event_timeout: 1500
                 });
 
-                /*
-                 * Evita prender o usuário caso a tag
-                 * não retorne o callback.
-                 */
-                window.setTimeout(navigateToWhatsApp, 1600);
+                fallbackTimer = window.setTimeout(
+                    navigateToWhatsApp,
+                    1800
+                );
 
             } catch (error) {
-                link.dataset.conversionPending = "false";
+
+                navigateToWhatsApp();
             }
         });
     });
